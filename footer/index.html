@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medixi Footer</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary: #0a316c;
+        --accent: #02c4d9;
+        --text-light: #e1eef6;
+        --muted: #95a9c5;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #071a3f;
+        margin: 0;
+        color: var(--text-light);
+      }
+
+      .footer {
+        background: radial-gradient(circle at top left, rgba(6, 87, 130, 0.4), transparent 50%),
+          #071a3f;
+        padding-top: 60px;
+      }
+
+      .footer-logo img {
+        max-height: 60px;
+      }
+
+      .footer-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .title-underline {
+        width: 50px;
+        height: 3px;
+        background: var(--accent);
+        margin-bottom: 20px;
+      }
+
+      .about-text {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .contact-number {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #00d0b5;
+      }
+
+      .doctor-card {
+        display: flex;
+        gap: 10px;
+        margin-top: 25px;
+        align-items: center;
+      }
+
+      .doctor-card img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .doctor-card h6 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .doctor-card span {
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      .services-list {
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .services-list li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 0;
+        color: var(--muted);
+      }
+
+      .services-list li i {
+        color: var(--accent);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 80px);
+        gap: 12px;
+      }
+
+      .gallery-grid img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 2px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .visiting-hours dt {
+        width: 90px;
+        color: var(--muted);
+      }
+
+      .visiting-hours dd {
+        margin-left: 110px;
+        margin-bottom: 12px;
+      }
+
+      .footer-address a {
+        color: var(--text-light);
+        text-decoration: none;
+      }
+
+      .footer-address a:hover {
+        color: var(--accent);
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-right: 10px;
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        transition: transform 0.2s ease, background 0.2s ease;
+        text-decoration: none;
+      }
+
+      .social-icons a:hover {
+        transform: translateY(-3px);
+        background: var(--accent);
+      }
+
+      .footer-bottom {
+        background: #00c8f4;
+        color: #083152;
+        padding: 15px 0;
+        margin-top: 50px;
+      }
+
+      .footer-nav a {
+        color: #083152;
+        font-weight: 500;
+        text-decoration: none;
+        margin-left: 25px;
+      }
+
+      .footer-nav a:hover {
+        text-decoration: underline;
+      }
+
+      .back-to-top {
+        width: 46px;
+        height: 46px;
+        border-radius: 10px 10px 0 0;
+        background: #00c8f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 40px -40px auto;
+        transform: translateY(-50%);
+        color: #083152;
+      }
+
+      @media (max-width: 992px) {
+        .gallery-grid {
+          grid-template-columns: repeat(3, 70px);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .footer-nav {
+          text-align: center;
+        }
+
+        .footer-nav a {
+          display: inline-block;
+          margin: 8px 12px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <footer class="footer text-white">
+      <div class="container pb-5">
+        <div class="row align-items-start g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo mb-4">
+              <img src="https://i.ibb.co/z5GRvwd/medix-logo.png" alt="Medixi" />
+            </div>
+            <h5 class="footer-title">About Us</h5>
+            <div class="title-underline"></div>
+            <p class="about-text">
+              Energistically reintermediate worldwide interfaces vis-à-vis emerging
+              integrate leadership skills for better clinical outcomes and patient
+              trust.
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <div class="fs-3 text-info">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div>
+                <span class="text-uppercase small text-muted">Emergency</span>
+                <div class="contact-number">693 2325 12456</div>
+              </div>
+            </div>
+            <div class="doctor-card">
+              <img
+                src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=200&q=80"
+                alt="Dr. David Smith"
+              />
+              <div>
+                <h6>Dr. David Smith</h6>
+                <span>Senior Consultant</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-title">Services</h5>
+            <div class="title-underline"></div>
+            <ul class="services-list">
+              <li><i class="fa-solid fa-chevron-right"></i> Body Surgery</li>
+              <li><i class="fa-solid fa-chevron-right"></i> Major Operation</li>
+              <li><i class="fa-solid fa-chevron-right"></i> Child Care</li>
+              <li><i class="fa-solid fa-chevron-right"></i> Heart Surgery</li>
+              <li><i class="fa-solid fa-chevron-right"></i> Mental Health</li>
+              <li><i class="fa-solid fa-chevron-right"></i> Urgent Care</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-title">Gallery Posts</h5>
+            <div class="title-underline"></div>
+            <div class="gallery-grid">
+              <img src="https://i.ibb.co/51HPYFW/medix-01.jpg" alt="gallery" />
+              <img src="https://i.ibb.co/LgnMB1z/medix-02.jpg" alt="gallery" />
+              <img src="https://i.ibb.co/S5wbhwb/medix-03.jpg" alt="gallery" />
+              <img src="https://i.ibb.co/N330NPC/medix-04.jpg" alt="gallery" />
+              <img src="https://i.ibb.co/G2cZVxN/medix-05.jpg" alt="gallery" />
+              <img src="https://i.ibb.co/7yb3vCK/medix-06.jpg" alt="gallery" />
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-title">Visiting Hours</h5>
+            <div class="title-underline"></div>
+            <dl class="visiting-hours">
+              <dt>Mon - Fri:</dt>
+              <dd>8:00 am - 8:00 pm</dd>
+              <dt>Saturday:</dt>
+              <dd>9:00 am - 6:00 pm</dd>
+              <dt>Sunday:</dt>
+              <dd>9:00 am - 6:00 pm</dd>
+            </dl>
+            <div class="footer-address mb-4">
+              <i class="fa-solid fa-location-dot me-2 text-info"></i>
+              <a href="https://maps.google.com" target="_blank">
+                374 William S Canning Blvd, Fall River MA 2721
+              </a>
+            </div>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-solid fa-globe"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center back-to-top">
+        <i class="fa-solid fa-angle-up"></i>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+          <div>
+            Copyright © 2024 Medixi. All rights reserved by Vecuro.
+          </div>
+          <div class="footer-nav">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
