@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials Slider</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary: #0e1f56;
+        --accent: #06c167;
+        --dark-blue: #061a66;
+        --body: #4b587f;
+        --card: #041143;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f6f8fd;
+        padding: 60px 0;
+        color: var(--primary);
+      }
+
+      .section-tag {
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #16c984;
+        letter-spacing: 0.1em;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .section-tag::before,
+      .section-tag::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: currentColor;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 4vw, 3.3rem);
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .lead-text {
+        color: var(--body);
+        max-width: 520px;
+        margin-bottom: 30px;
+      }
+
+      .why-list {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 40px;
+      }
+
+      .why-list li {
+        display: flex;
+        gap: 18px;
+        margin-bottom: 22px;
+      }
+
+      .icon-badge {
+        width: 44px;
+        height: 44px;
+        background: rgba(22, 201, 132, 0.15);
+        color: var(--accent);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+
+      .list-title {
+        font-weight: 700;
+        font-size: 1.05rem;
+        margin-bottom: 6px;
+      }
+
+      .list-text {
+        color: var(--body);
+      }
+
+      .cta-group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .btn-primary-custom {
+        background: #1f58ff;
+        border: none;
+        padding: 14px 28px;
+        border-radius: 999px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+      }
+
+      .rating-badge {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .rating-badge img {
+        width: 46px;
+      }
+
+      .hero-media {
+        position: relative;
+        border-radius: 26px;
+        overflow: hidden;
+        background: #dbe7ff;
+        padding: 40px 40px 150px;
+        min-height: 520px;
+      }
+
+      .hero-media img {
+        width: 100%;
+        border-radius: 22px;
+        object-fit: cover;
+        height: 460px;
+        object-position: center top;
+      }
+
+      .testimonial-card {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: clamp(260px, 80%, 520px);
+        background: var(--card);
+        color: #fff;
+        border-radius: 22px;
+        padding: 28px;
+        box-shadow: 0 20px 60px rgba(5, 18, 65, 0.3);
+      }
+
+      .swiper {
+        width: 100%;
+      }
+
+      .testimonial-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 16px;
+      }
+
+      .testimonial-header img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 3px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        object-fit: cover;
+      }
+
+      .testimonial-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .testimonial-role {
+        color: #a9b7ff;
+        font-size: 0.9rem;
+      }
+
+      .stars {
+        color: #f9b302;
+        margin-bottom: 12px;
+      }
+
+      .quote-icon {
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0.25);
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        top: auto;
+        bottom: 25px;
+      }
+
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .swiper-button-prev {
+        right: 90px;
+        left: auto;
+      }
+
+      .swiper-button-next {
+        right: 30px;
+      }
+
+      @media (max-width: 1200px) {
+        .hero-media {
+          padding: 35px 35px 130px;
+        }
+
+        .testimonial-card {
+          width: clamp(260px, 85%, 520px);
+        }
+      }
+
+      @media (max-width: 992px) {
+        .hero-media {
+          margin-top: 40px;
+          padding: 30px;
+          min-height: auto;
+        }
+
+        .testimonial-card {
+          position: static;
+          transform: none;
+          margin-top: 25px;
+          width: 100%;
+        }
+
+        .hero-media img {
+          height: auto;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          bottom: 15px;
+          width: 42px;
+          height: 42px;
+        }
+
+        .swiper-button-prev {
+          right: 75px;
+        }
+
+        .swiper-button-next {
+          right: 20px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        body {
+          padding: 40px 0;
+        }
+
+        h1 {
+          font-size: 2.2rem;
+          text-align: center;
+        }
+
+        .lead-text,
+        .why-list {
+          text-align: center;
+        }
+
+        .why-list li {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .cta-group {
+          justify-content: center;
+        }
+
+        .rating-badge {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .hero-media {
+          padding: 20px;
+        }
+
+        .hero-media img {
+          border-radius: 16px;
+        }
+
+        .testimonial-card {
+          padding: 22px;
+          border-radius: 18px;
+          width: 100%;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          width: 38px;
+          height: 38px;
+          bottom: 12px;
+        }
+
+        .cta-group {
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+        }
+
+        .btn-primary-custom {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .testimonial-header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .testimonial-header img {
+          width: 56px;
+          height: 56px;
+        }
+
+        .stars {
+          text-align: center;
+        }
+
+        .swiper-button-prev {
+          right: 65px;
+        }
+
+        .swiper-button-next {
+          right: 15px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="section-tag">Why Choose Hinton</span>
+          <h1>Professional Medical Network With Large Directory Listings</h1>
+          <p class="lead-text">
+            With a focus on compassionate and personalized treatment we strive to
+            create a welcoming environment where patients feel valued, respected,
+            and well informed about their health.
+          </p>
+          <ul class="why-list">
+            <li>
+              <div class="icon-badge"><i class="fa-solid fa-shield-heart"></i></div>
+              <div>
+                <div class="list-title">Quality Control System</div>
+                <div class="list-text">
+                  Our doctors continually sharpen their skills through global
+                  medical conferences and quality courses.
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="icon-badge"><i class="fa-solid fa-user-tie"></i></div>
+              <div>
+                <div class="list-title">Highly Professional Staff</div>
+                <div class="list-text">
+                  Dedicated specialists ensure a personal approach for every case.
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="icon-badge"><i class="fa-solid fa-briefcase-medical"></i></div>
+              <div>
+                <div class="list-title">Medical & Surgical Services</div>
+                <div class="list-text">
+                  Comprehensive coverage from diagnostics to advanced procedures.
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="icon-badge"><i class="fa-solid fa-stethoscope"></i></div>
+              <div>
+                <div class="list-title">Outpatient Services</div>
+                <div class="list-text">
+                  Efficient outpatient units keep recovery swift and convenient.
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="cta-group">
+            <a class="btn btn-primary-custom" href="#">
+              Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <div class="rating-badge">
+              <img
+                src="https://templates.envytheme.com/hinton/default/assets/img/icons/google.svg"
+                alt="Google logo"
+              />
+              <div>
+                4.9/5.0
+                <div class="small text-muted">Google Ratings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-media">
+            <img
+              src="https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Medical team"
+            />
+            <div class="testimonial-card">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="testimonial-header">
+                      <img
+                        src="https://images.pexels.com/photos/5327955/pexels-photo-5327955.jpeg?auto=compress&cs=tinysrgb&w=200"
+                        alt="Richard Grene"
+                      />
+                      <div>
+                        <div class="testimonial-name">Richard Grene</div>
+                        <div class="testimonial-role">Entrepreneur</div>
+                      </div>
+                    </div>
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="mb-3">
+                      “To help all and give hope to those who have lost hope. Our
+                      administrative and clinical team is second to none, reiterating
+                      while we have the best of an expert team taking care of patients.”
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="quote-icon"><i class="fa-solid fa-quote-right"></i></span>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="testimonial-header">
+                      <img
+                        src="https://images.pexels.com/photos/3760859/pexels-photo-3760859.jpeg?auto=compress&cs=tinysrgb&w=200"
+                        alt="Emily Stone"
+                      />
+                      <div>
+                        <div class="testimonial-name">Emily Stone</div>
+                        <div class="testimonial-role">Product Designer</div>
+                      </div>
+                    </div>
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="mb-3">
+                      “The staff is caring and the doctors are thorough. They kept me
+                      updated during each stage and made sure my treatment stayed on
+                      track.”
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="quote-icon"><i class="fa-solid fa-quote-right"></i></span>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="testimonial-header">
+                      <img
+                        src="https://images.pexels.com/photos/532220/pexels-photo-532220.jpeg?auto=compress&cs=tinysrgb&w=200"
+                        alt="Jason Malik"
+                      />
+                      <div>
+                        <div class="testimonial-name">Jason Malik</div>
+                        <div class="testimonial-role">Marketing Lead</div>
+                      </div>
+                    </div>
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="mb-3">
+                      “Scheduling was a breeze and the outpatient wing is incredibly
+                      efficient. I never felt rushed and left confident in my care.”
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="quote-icon"><i class="fa-solid fa-quote-right"></i></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
+
