@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Members - Professional</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #0e1f56;
+  --accent: #02c4d9;
+  --text-dark: #1a1a1a;
+  --text-light: #6b7280;
+  --bg-light: #f8fafc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding: 80px 0;
+}
+
+.team-section {
+  position: relative;
+  padding: 60px 0;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.section-tag::before,
+.section-tag::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.team-header h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.team-header p {
+  font-size: 1.125rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Team Member Card */
+.team-slider {
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.team-member {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+}
+
+.team-member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.team-member-img {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+.team-member-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.team-member:hover .team-member-img img {
+  transform: scale(1.1);
+}
+
+.team-member-content {
+  padding: 24px;
+  text-align: center;
+}
+
+.team-member-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.team-member-role {
+  font-size: 0.9375rem;
+  color: var(--text-light);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.team-social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.team-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.team-social a i {
+  display: inline-block;
+  line-height: 1;
+}
+
+.team-social a:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Custom Navigation Buttons - Bottom Right */
+.custom-nav-buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.custom-nav-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.125rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.custom-nav-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 196, 217, 0.3);
+}
+
+.custom-nav-btn:active {
+  transform: translateY(0);
+}
+
+.custom-nav-btn.swiper-button-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Hide default Swiper buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .team-slider {
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 40px 0;
+  }
+
+  .team-section {
+    padding: 40px 0;
+  }
+
+  .team-header {
+    margin-bottom: 40px;
+  }
+
+  .team-header h2 {
+    font-size: 1.875rem;
+  }
+
+  .team-header p {
+    font-size: 1rem;
+  }
+
+  .team-slider {
+    padding-bottom: 70px;
+  }
+
+  .custom-nav-buttons {
+    position: relative;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .team-member-content {
+    padding: 20px;
+  }
+
+  .team-member-name {
+    font-size: 1.125rem;
+  }
+
+  .team-member-role {
+    font-size: 0.875rem;
+  }
+
+  .custom-nav-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<section class="team-section">
+  <div class="container">
+    <!-- Header -->
+    <div class="team-header">
+      <span class="section-tag">Our Team</span>
+      <h2>Meet Our Expert Team</h2>
+      <p>At Maxcare, we are dedicated to delivering exceptional healthcare for over 20 years, offering comprehensive medical services in the USA.</p>
+    </div>
+
+    <!-- Team Slider -->
+    <div class="team-slider-wrapper position-relative">
+      <div class="swiper team-slider">
+        <div class="swiper-wrapper">
+          <!-- Member 1 -->
+          <div class="swiper-slide">
+            <div class="team-member">
+              <div class="team-member-img">
+                <img src="https://maxcare.casethemes.net/wp-content/uploads/2025/08/team-img2.jpg" alt="Jenifer Olivia">
+              </div>
+              <div class="team-member-content">
+                <h4 class="team-member-name">Jenifer Olivia</h4>
+                <p class="team-member-role">Chief Executive Officer</p>
+                <div class="team-social">
+                  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="swiper-slide">
+            <div class="team-member">
+              <div class="team-member-img">
+                <img src="https://maxcare.casethemes.net/wp-content/uploads/2025/08/team-img1.jpg" alt="Jason Armstrong">
+              </div>
+              <div class="team-member-content">
+                <h4 class="team-member-name">Jason Armstrong</h4>
+                <p class="team-member-role">Head Of Operation</p>
+                <div class="team-social">
+                  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="swiper-slide">
+            <div class="team-member">
+              <div class="team-member-img">
+                <img src="https://maxcare.casethemes.net/wp-content/uploads/2025/08/team-img5.jpg" alt="Arnold Maxwell">
+              </div>
+              <div class="team-member-content">
+                <h4 class="team-member-name">Arnold Maxwell</h4>
+                <p class="team-member-role">Chief Financial Officer</p>
+                <div class="team-social">
+                  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="swiper-slide">
+            <div class="team-member">
+              <div class="team-member-img">
+                <img src="https://maxcare.casethemes.net/wp-content/uploads/2025/08/team-img3.jpg" alt="Ashley Graham">
+              </div>
+              <div class="team-member-content">
+                <h4 class="team-member-name">Ashley Graham</h4>
+                <p class="team-member-role">Chief Business Analyst</p>
+                <div class="team-social">
+                  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member 5 -->
+          <div class="swiper-slide">
+            <div class="team-member">
+              <div class="team-member-img">
+                <img src="https://maxcare.casethemes.net/wp-content/uploads/2025/08/team-img2.jpg" alt="Samuel Parker">
+              </div>
+              <div class="team-member-content">
+                <h4 class="team-member-name">Samuel Parker</h4>
+                <p class="team-member-role">Senior Designer</p>
+                <div class="team-social">
+                  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member 6 -->
+          <div class="swiper-slide">
+            <div class="team-member">
+              <div class="team-member-img">
+                <img src="https://maxcare.casethemes.net/wp-content/uploads/2025/08/team-img1.jpg" alt="Emily Watson">
+              </div>
+              <div class="team-member-content">
+                <h4 class="team-member-name">Emily Watson</h4>
+                <p class="team-member-role">Marketing Head</p>
+                <div class="team-social">
+                  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Custom Navigation Buttons - Bottom Right -->
+      <div class="custom-nav-buttons">
+        <button class="custom-nav-btn team-prev" aria-label="Previous">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="custom-nav-btn team-next" aria-label="Next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const teamSwiper = new Swiper('.team-slider', {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.team-next',
+      prevEl: '.team-prev',
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 24,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      }
+    }
+  });
+
+  // Update button disabled state
+  teamSwiper.on('slideChange', function () {
+    const prevBtn = document.querySelector('.team-prev');
+    const nextBtn = document.querySelector('.team-next');
+    
+    if (prevBtn && nextBtn) {
+      if (teamSwiper.isBeginning && !teamSwiper.params.loop) {
+        prevBtn.classList.add('swiper-button-disabled');
+      } else {
+        prevBtn.classList.remove('swiper-button-disabled');
+      }
+      
+      if (teamSwiper.isEnd && !teamSwiper.params.loop) {
+        nextBtn.classList.add('swiper-button-disabled');
+      } else {
+        nextBtn.classList.remove('swiper-button-disabled');
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
