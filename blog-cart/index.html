@@ -38,12 +38,21 @@ body {
   font-family: 'Inter', sans-serif;
   background: var(--bg-light);
   color: var(--text-dark);
-  padding: 80px 0;
+  padding: 60px 0;
+  overflow-x: hidden;
 }
 
 .blog-section {
   position: relative;
-  padding: 60px 0;
+  padding: 50px 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.blog-section .container {
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: hidden;
 }
 
 .blog-header {
@@ -115,9 +124,16 @@ body {
 .blog-slider-wrapper {
   position: relative;
   padding-bottom: 80px;
+  margin: 0 -15px;
+  overflow: hidden;
 }
 
 .blog-slider {
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+.blog-slider .swiper-wrapper {
   overflow: visible;
 }
 
@@ -340,14 +356,51 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .blog-slider-wrapper {
+    margin: 0 -10px;
+    overflow: hidden;
+  }
+
+  .blog-slider {
+    padding: 0 10px;
+    overflow: hidden;
+  }
+}
+
 @media (max-width: 992px) {
+  body {
+    padding: 50px 0;
+  }
+
+  .blog-section {
+    padding: 40px 0;
+  }
+
   .blog-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .blog-header-left {
+    min-width: 100%;
   }
 
   .view-all-btn {
     align-self: flex-start;
+  }
+
+  .blog-slider-wrapper {
+    margin: 0 -15px;
+    padding-bottom: 75px;
+    overflow: hidden;
+  }
+
+  .blog-slider {
+    padding: 0 15px;
+    overflow: hidden;
   }
 }
 
@@ -357,21 +410,39 @@ body {
   }
 
   .blog-section {
-    padding: 40px 0;
+    padding: 30px 0;
+  }
+
+  .blog-section .container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .blog-header {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
+  }
+
+  .blog-header h2 {
+    font-size: 1.75rem;
   }
 
   .blog-slider-wrapper {
     padding-bottom: 70px;
+    margin: 0 -20px;
+    overflow: hidden;
+  }
+
+  .blog-slider {
+    padding: 0 20px;
+    overflow: hidden;
   }
 
   .custom-nav-buttons {
     position: relative;
     justify-content: center;
     margin-top: 30px;
+    bottom: auto;
+    right: auto;
   }
 
   .blog-content {
@@ -380,18 +451,133 @@ body {
 
   .blog-title {
     font-size: 1.125rem;
+    margin-bottom: 12px;
+  }
+
+  .blog-excerpt {
+    font-size: 0.875rem;
+    margin-bottom: 16px;
+    -webkit-line-clamp: 2;
+  }
+
+  .blog-meta {
+    font-size: 0.8125rem;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .read-more-btn {
+    padding: 8px 18px;
+    font-size: 0.875rem;
   }
 }
 
 @media (max-width: 576px) {
+  body {
+    padding: 30px 0;
+  }
+
+  .blog-section {
+    padding: 25px 0;
+  }
+
+  .blog-section .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .blog-header {
+    margin-bottom: 30px;
+  }
+
+  .blog-header h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+  }
+
+  .view-all-btn {
+    padding: 12px 24px;
+    font-size: 0.875rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .blog-slider-wrapper {
+    margin: 0 -15px;
+    padding-bottom: 65px;
+    overflow: hidden;
+  }
+
+  .blog-slider {
+    padding: 0 15px;
+    overflow: hidden;
+  }
+
   .blog-image-wrapper {
-    padding-top: 60%;
+    padding-top: 65%;
+  }
+
+  .blog-content {
+    padding: 18px;
+  }
+
+  .blog-title {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .blog-excerpt {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    -webkit-line-clamp: 2;
+  }
+
+  .blog-meta {
+    font-size: 0.75rem;
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .blog-meta span {
+    gap: 4px;
+  }
+
+  .read-more-btn {
+    padding: 8px 16px;
+    font-size: 0.8125rem;
+    width: 100%;
+    justify-content: center;
   }
 
   .custom-nav-btn {
-    width: 48px;
-    height: 48px;
-    font-size: 1rem;
+    width: 44px;
+    height: 44px;
+    font-size: 0.9375rem;
+  }
+
+  .custom-nav-buttons {
+    gap: 10px;
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 400px) {
+  .blog-header h2 {
+    font-size: 1.375rem;
+  }
+
+  .blog-image-wrapper {
+    padding-top: 70%;
+  }
+
+  .blog-content {
+    padding: 15px;
   }
 }
 </style>
@@ -590,7 +776,7 @@ body {
 <script>
   const blogSwiper = new Swiper('.blog-slider', {
     slidesPerView: 1,
-    spaceBetween: 24,
+    spaceBetween: 20,
     loop: true,
     autoplay: {
       delay: 4000,
@@ -601,8 +787,16 @@ body {
       prevEl: '.blog-prev',
     },
     breakpoints: {
-      640: {
+      576: {
+        slidesPerView: 1.5,
+        spaceBetween: 20,
+      },
+      768: {
         slidesPerView: 2,
+        spaceBetween: 24,
+      },
+      992: {
+        slidesPerView: 2.5,
         spaceBetween: 24,
       },
       1024: {
