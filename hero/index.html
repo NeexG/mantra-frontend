@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Slider - Same Design</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<!-- Slider Section -->
+<section class="slider">
+  <div class="swiper hero-slider">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide single-slider" style="background-image: url('slider3.5dc7b668.jpg');">
+        <div class="container">
+          <div class="text">
+            <h1>We Provide <span>Medical</span> Services <br> That You Can <span>Trust!</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <div class="button">
+              <a href="#" class="btn">Get Appointment</a>
+              <a href="#" class="btn primary">Contact Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide single-slider" style="background-image: url('slider2.jpg');">
+        <div class="container">
+          <div class="text">
+            <h1>We Provide <span>Medical</span> Services <br> That You Can <span>Trust!</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <div class="button">
+              <a href="#" class="btn">Get Appointment</a>
+              <a href="#" class="btn primary">About Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide single-slider" style="background-image: url('slider.jpg');">
+        <div class="container">
+          <div class="text">
+            <h1>We Provide <span>Medical</span> Services <br> That You Can <span>Trust!</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <div class="button">
+              <a href="#" class="btn">Get Appointment</a>
+              <a href="#" class="btn primary">Contact Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+  </div>
+</section>
+
+<style>
+:root {
+  --primary-color: #1A76D1;
+}
+
+/* SLIDER WRAPPER */
+.slider {
+  position: relative;
+}
+
+/* EACH SLIDE */
+.slider .single-slider {
+  height: 600px; /* Normal height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+/* CONTENT AREA */
+.slider .single-slider .text {
+  margin-top: 80px;
+}
+
+.slider .single-slider h1 {
+  color: #2c2d3f;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.slider .single-slider h1 span {
+  color: var(--primary-color);
+}
+
+.slider .single-slider p {
+  color: #2c2d3f;
+  margin-top: 27px;
+  font-weight: 400;
+}
+
+/* BUTTONS */
+.slider .button {
+  margin-top: 30px;
+}
+
+.slider .btn {
+  padding: 12px 25px;
+  border-radius: 5px;
+  color: #fff;
+  background: var(--primary-color);
+  display: inline-block;
+  margin-right: 12px;
+  font-weight: 500;
+}
+
+.slider .btn.primary {
+  background: #2c2d3f;
+}
+
+/* SWIPER NAV BUTTONS */
+.slider .swiper-button-next:after,
+.slider .swiper-button-prev:after {
+  font-family: "FontAwesome";
+  font-size: 26px;
+}
+
+.slider .swiper-button-prev:after {
+  content: "\f104";
+}
+
+.slider .swiper-button-next:after {
+  content: "\f105";
+}
+
+.slider .swiper-button-next,
+.slider .swiper-button-prev {
+  height: 50px;
+  width: 50px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider .swiper-button-next:hover,
+.slider .swiper-button-prev:hover {
+  background: #2c2d3f;
+}
+
+/* 🔥 ANIMATIONS (Heading up, paragraph up, buttons down) */
+.slider .swiper-slide-active.single-slider h1 {
+  animation: fadeInUp 1s .4s both;
+}
+
+.slider .swiper-slide-active.single-slider p {
+  animation: fadeInUp 1s .7s both;
+}
+
+.slider .swiper-slide-active.single-slider .button {
+  animation: fadeInDown 1s 1s both;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to   {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInDown {
+  from {opacity: 0; transform: translateY(-40px);}
+  to   {opacity: 1; transform: translateY(0);}
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .slider .single-slider {
+    height: 450px;
+  }
+  .slider .single-slider h1 {
+    font-size: 30px;
+  }
+}
+
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/fontawesome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+const swiper = new Swiper('.hero-slider', {
+    loop: true,
+    speed: 900,
+    autoplay: {
+        delay: 4500,
+        disableOnInteraction: false
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    }
+});
+</script>
