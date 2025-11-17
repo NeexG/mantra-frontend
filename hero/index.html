@@ -3,57 +3,435 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hero Slider - Same Design</title>
+  <title>Hero Section - Professional</title>
 
   <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary-color: #1A76D1;
+  --primary-dark: #1565C0;
+  --text-dark: #2c2d3f;
+  --text-light: #6b7280;
+  --accent: #02c4d9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* SLIDER WRAPPER */
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+/* EACH SLIDE */
+.slider .single-slider {
+  min-height: 500px;
+  height: 70vh;
+  max-height: 700px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider .single-slider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.7) 100%);
+  z-index: 1;
+}
+
+.slider .single-slider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(26, 118, 209, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+/* CONTENT AREA */
+.slider .single-slider .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.slider .single-slider .text {
+  max-width: 700px;
+  margin: 0 auto 0 0;
+  padding: 40px 0;
+}
+
+.slider .single-slider h1 {
+  color: var(--text-dark);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.slider .single-slider h1 span {
+  color: var(--primary-color);
+  position: relative;
+}
+
+.slider .single-slider h1 span::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(26, 118, 209, 0.2);
+  z-index: -1;
+}
+
+.slider .single-slider p {
+  color: var(--text-light);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 40px;
+  font-weight: 400;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* BUTTONS */
+.slider .button {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 0;
+}
+
+.slider .btn {
+  padding: 16px 32px;
+  border-radius: 50px;
+  color: #fff;
+  background: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 4px 15px rgba(26, 118, 209, 0.3);
+}
+
+.slider .btn:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 118, 209, 0.4);
+  color: #fff;
+}
+
+.slider .btn.primary {
+  background: transparent;
+  color: var(--text-dark);
+  border-color: var(--text-dark);
+  box-shadow: none;
+}
+
+.slider .btn.primary:hover {
+  background: var(--text-dark);
+  color: #fff;
+  border-color: var(--text-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 45, 63, 0.3);
+}
+
+.slider .btn i {
+  font-size: 0.875rem;
+  transition: transform 0.3s ease;
+}
+
+.slider .btn:hover i {
+  transform: translateX(4px);
+}
+
+/* SWIPER NAV BUTTONS */
+.slider .swiper-button-next,
+.slider .swiper-button-prev {
+  height: 56px;
+  width: 56px;
+  background: #fff;
+  color: var(--primary-color);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.slider .swiper-button-next::after,
+.slider .swiper-button-prev::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.slider .swiper-button-prev::after {
+  content: "\f104";
+}
+
+.slider .swiper-button-next::after {
+  content: "\f105";
+}
+
+.slider .swiper-button-next:hover,
+.slider .swiper-button-prev:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(26, 118, 209, 0.4);
+}
+
+.slider .swiper-button-prev {
+  left: 30px;
+}
+
+.slider .swiper-button-next {
+  right: 30px;
+}
+
+/* Pagination */
+.slider .swiper-pagination {
+  bottom: 30px;
+}
+
+.slider .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  opacity: 0.5;
+  border: 2px solid var(--primary-color);
+}
+
+.slider .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--primary-color);
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* ANIMATIONS */
+.slider .swiper-slide-active.single-slider h1 {
+  animation: fadeInUp 1s 0.4s both;
+}
+
+.slider .swiper-slide-active.single-slider p {
+  animation: fadeInUp 1s 0.7s both;
+}
+
+.slider .swiper-slide-active.single-slider .button {
+  animation: fadeInUp 1s 1s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .slider .single-slider .text {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 992px) {
+  .slider .single-slider {
+    min-height: 600px;
+  }
+
+  .slider .single-slider .text {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .slider .button {
+    justify-content: center;
+  }
+
+  .slider .swiper-button-prev {
+    left: 15px;
+  }
+
+  .slider .swiper-button-next {
+    right: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider .single-slider {
+    min-height: 450px;
+    height: 70vh;
+    max-height: 600px;
+  }
+
+  .slider .single-slider .text {
+    padding: 20px 15px;
+  }
+
+  .slider .single-slider h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .slider .single-slider p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .slider .btn {
+    padding: 14px 28px;
+    font-size: 0.9375rem;
+  }
+
+  .slider .swiper-button-next,
+  .slider .swiper-button-prev {
+    height: 48px;
+    width: 48px;
+  }
+
+  .slider .swiper-button-prev {
+    left: 10px;
+  }
+
+  .slider .swiper-button-next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider .single-slider {
+    min-height: 500px;
+  }
+
+  .slider .button {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .slider .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .slider .swiper-button-next,
+  .slider .swiper-button-prev {
+    height: 44px;
+    width: 44px;
+  }
+
+  .slider .swiper-button-next::after,
+  .slider .swiper-button-prev::after {
+    font-size: 16px;
+  }
+}
+</style>
+</head>
+<body>
+
 <!-- Slider Section -->
 <section class="slider">
   <div class="swiper hero-slider">
     <div class="swiper-wrapper">
 
       <!-- Slide 1 -->
-      <div class="swiper-slide single-slider" style="background-image: url('slider3.5dc7b668.jpg');">
+      <div class="swiper-slide single-slider" style="background-image: url('https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&cs=tinysrgb&w=1920');">
         <div class="container">
           <div class="text">
             <h1>We Provide <span>Medical</span> Services <br> That You Can <span>Trust!</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Experience world-class healthcare with our team of expert medical professionals. We are committed to providing compassionate, personalized care that puts your health and wellbeing first.</p>
 
             <div class="button">
-              <a href="#" class="btn">Get Appointment</a>
-              <a href="#" class="btn primary">Contact Now</a>
+              <a href="#" class="btn">
+                Get Appointment <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#" class="btn primary">
+                Contact Now <i class="fas fa-phone"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Slide 2 -->
-      <div class="swiper-slide single-slider" style="background-image: url('slider2.jpg');">
+      <div class="swiper-slide single-slider" style="background-image: url('https://images.pexels.com/photos/3845558/pexels-photo-3845558.jpeg?auto=compress&cs=tinysrgb&w=1920');">
         <div class="container">
           <div class="text">
-            <h1>We Provide <span>Medical</span> Services <br> That You Can <span>Trust!</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h1>Advanced <span>Healthcare</span> Solutions <br> For Your <span>Family</span></h1>
+            <p>Comprehensive medical services designed to meet all your family's healthcare needs. From routine checkups to specialized treatments, we're here for you every step of the way.</p>
 
             <div class="button">
-              <a href="#" class="btn">Get Appointment</a>
-              <a href="#" class="btn primary">About Us</a>
+              <a href="#" class="btn">
+                Get Appointment <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#" class="btn primary">
+                About Us <i class="fas fa-info-circle"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Slide 3 -->
-      <div class="swiper-slide single-slider" style="background-image: url('slider.jpg');">
+      <div class="swiper-slide single-slider" style="background-image: url('https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=1920');">
         <div class="container">
           <div class="text">
-            <h1>We Provide <span>Medical</span> Services <br> That You Can <span>Trust!</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h1>Your Health Is Our <span>Priority</span> <br> Quality Care <span>Always</span></h1>
+            <p>Trusted by thousands of patients, we deliver exceptional medical care with cutting-edge technology and a patient-centered approach that makes all the difference.</p>
 
             <div class="button">
-              <a href="#" class="btn">Get Appointment</a>
-              <a href="#" class="btn primary">Contact Now</a>
+              <a href="#" class="btn">
+                Get Appointment <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#" class="btn primary">
+                Contact Now <i class="fas fa-phone"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -64,152 +442,38 @@
     <!-- Navigation -->
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
-
+    
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
   </div>
 </section>
 
-<style>
-:root {
-  --primary-color: #1A76D1;
-}
-
-/* SLIDER WRAPPER */
-.slider {
-  position: relative;
-}
-
-/* EACH SLIDE */
-.slider .single-slider {
-  height: 600px; /* Normal height */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-}
-
-/* CONTENT AREA */
-.slider .single-slider .text {
-  margin-top: 80px;
-}
-
-.slider .single-slider h1 {
-  color: #2c2d3f;
-  font-size: 44px;
-  font-weight: 700;
-  line-height: 130%;
-}
-
-.slider .single-slider h1 span {
-  color: var(--primary-color);
-}
-
-.slider .single-slider p {
-  color: #2c2d3f;
-  margin-top: 27px;
-  font-weight: 400;
-}
-
-/* BUTTONS */
-.slider .button {
-  margin-top: 30px;
-}
-
-.slider .btn {
-  padding: 12px 25px;
-  border-radius: 5px;
-  color: #fff;
-  background: var(--primary-color);
-  display: inline-block;
-  margin-right: 12px;
-  font-weight: 500;
-}
-
-.slider .btn.primary {
-  background: #2c2d3f;
-}
-
-/* SWIPER NAV BUTTONS */
-.slider .swiper-button-next:after,
-.slider .swiper-button-prev:after {
-  font-family: "FontAwesome";
-  font-size: 26px;
-}
-
-.slider .swiper-button-prev:after {
-  content: "\f104";
-}
-
-.slider .swiper-button-next:after {
-  content: "\f105";
-}
-
-.slider .swiper-button-next,
-.slider .swiper-button-prev {
-  height: 50px;
-  width: 50px;
-  background: var(--primary-color);
-  color: #fff;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.slider .swiper-button-next:hover,
-.slider .swiper-button-prev:hover {
-  background: #2c2d3f;
-}
-
-/* 🔥 ANIMATIONS (Heading up, paragraph up, buttons down) */
-.slider .swiper-slide-active.single-slider h1 {
-  animation: fadeInUp 1s .4s both;
-}
-
-.slider .swiper-slide-active.single-slider p {
-  animation: fadeInUp 1s .7s both;
-}
-
-.slider .swiper-slide-active.single-slider .button {
-  animation: fadeInDown 1s 1s both;
-}
-
-/* Keyframes */
-@keyframes fadeInUp {
-  from {opacity: 0; transform: translateY(40px);}
-  to   {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInDown {
-  from {opacity: 0; transform: translateY(-40px);}
-  to   {opacity: 1; transform: translateY(0);}
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .slider .single-slider {
-    height: 450px;
-  }
-  .slider .single-slider h1 {
-    font-size: 30px;
-  }
-}
-
-</style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/fontawesome.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
 const swiper = new Swiper('.hero-slider', {
-    loop: true,
-    speed: 900,
-    autoplay: {
-        delay: 4500,
-        disableOnInteraction: false
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-    }
+  loop: true,
+  speed: 900,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true
+  },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true
+  }
 });
 </script>
+
+</body>
+</html>
