@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -19,26 +20,29 @@
     body {
       font-family: 'Inter', sans-serif;
       background: #eaf3ff;
-     
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 50px 20px;
       color: #10253e;
+      margin: 0;
+    }
+
+    .contact-section {
+      padding: 80px 0;
+    }
+
+    .contact-section .container {
+      max-width: 2000px;
     }
 
     .cards-layout {
-      
       display: grid;
-      grid-template-columns: 6fr 3fr 3fr;
-      gap: 26px;
+      grid-template-columns: 7fr 2.5fr 2.5fr;
+      gap: 24px;
       min-height: 520px;
     }
 
     .hero-card {
       position: relative;
       border-radius: 36px;
-      padding: 58px;
+      padding: 60px 320px 60px 70px;
       background: linear-gradient(120deg, #0079c4, #02b8dd);
       overflow: hidden;
       box-shadow: 0 35px 65px rgba(5, 77, 129, 0.35);
@@ -95,16 +99,16 @@
     .appointment-panel {
       position: absolute;
       top: 50%;
-      right: 36px;
+      right: 40px;
       transform: translateY(-50%);
-      width: clamp(320px, 45%, 420px);
+      width: clamp(320px, 38%, 420px);
       background: #ffffff;
-      border-radius: 32px;
-      padding: 42px 40px;
+      border-radius: 36px;
+      padding: 44px 40px;
       color: #10253e;
-      box-shadow: 0 30px 55px rgba(8, 53, 97, 0.25);
+      box-shadow: 0 30px 65px rgba(8, 53, 97, 0.25);
       z-index: 2;
-      border: 1px solid #e8f1ff;
+      border: 1px solid #dfe9f8;
     }
 
     .appointment-panel .panel-head {
@@ -280,6 +284,38 @@
       text-decoration: none;
     }
 
+    @media (max-width: 1600px) {
+      .cards-layout {
+        grid-template-columns: 6fr 3fr 3fr;
+        gap: 22px;
+      }
+
+      .hero-card {
+        padding: 56px 300px 56px 60px;
+      }
+
+      .appointment-panel {
+        right: 30px;
+        width: clamp(320px, 40%, 400px);
+      }
+    }
+
+    @media (max-width: 1400px) {
+      .cards-layout {
+        grid-template-columns: 5fr 3.5fr 3.5fr;
+        gap: 20px;
+      }
+
+      .hero-card {
+        padding: 50px 250px 50px 50px;
+      }
+
+      .appointment-panel {
+        right: 24px;
+        width: clamp(300px, 46%, 360px);
+      }
+    }
+
     @media (max-width: 1100px) {
       .cards-layout {
         grid-template-columns: 1fr;
@@ -302,10 +338,11 @@
   </style>
 </head>
 <body>
-
-  <section class="cards-layout">
-    <article class="hero-card">
-      <div class="hero-card-content">
+  <section class="contact-section">
+    <div class="container">
+      <div class="cards-layout">
+        <article class="hero-card">
+          <div class="hero-card-content">
         <h4>WELCOME TO MAXCARE</h4>
         <h1>Committed to ensure Quality Healthcare</h1>
         <p>Experience compassionate care, modern facilities, and the reassurance that your wellbeing is always our top priority.</p>
@@ -336,45 +373,48 @@
           <i class="fas fa-arrow-right"></i>
         </a>
       </div>
-    </article>
+        </article>
 
-    <article class="info-card gradient">
-      <h6>VISIT US</h6>
-      <div class="card-icon">
-        <i class="fas fa-building"></i>
-      </div>
-      <h3>Visit Our Center</h3>
-      <p>With more than twenty-one locations across the country, we are confident in providing the best care.</p>
-      <address>
-        Visit Our Clinic<br>
-        Office: 29 Madison Street, Studio Mia<br>
-        LA 20183, USA
-      </address>
-      <a class="link-button" href="#">
-        View All Healthcare Facilities
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </article>
+        <article class="info-card gradient">
+          <h6>VISIT US</h6>
+          <div class="card-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3>Visit Our Center</h3>
+          <p>With more than twenty-one locations across the country, we are confident in providing the best care.</p>
+          <address>
+            Visit Our Clinic<br>
+            Office: 29 Madison Street, Studio Mia<br>
+            LA 20183, USA
+          </address>
+          <a class="link-button" href="#">
+            View All Healthcare Facilities
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </article>
 
-    <article class="info-card teal">
-      <h6>HOURS</h6>
-      <div class="card-icon">
-        <i class="fas fa-clock"></i>
+        <article class="info-card teal">
+          <h6>HOURS</h6>
+          <div class="card-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Opening Hours</h3>
+          <ul>
+            <li><span>Monday – Thursday</span><span>08:00 – 18:00</span></li>
+            <li><span>Friday</span><span>08:00 – 18:00</span></li>
+            <li><span>Saturday</span><span>08:00 – 18:00</span></li>
+            <li><span>Sunday</span><span>08:00 – 18:00</span></li>
+          </ul>
+          <a class="link-button" href="#">
+            24/7 Service For Emergencies
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </article>
       </div>
-      <h3>Opening Hours</h3>
-      <ul>
-        <li><span>Monday – Thursday</span><span>08:00 – 18:00</span></li>
-        <li><span>Friday</span><span>08:00 – 18:00</span></li>
-        <li><span>Saturday</span><span>08:00 – 18:00</span></li>
-        <li><span>Sunday</span><span>08:00 – 18:00</span></li>
-      </ul>
-      <a class="link-button" href="#">
-        24/7 Service For Emergencies
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </article>
+    </div>
   </section>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
 
