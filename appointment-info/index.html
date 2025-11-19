@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maxcare Contact Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #eaf3ff;
+     
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+      color: #10253e;
+    }
+
+    .cards-layout {
+      
+      display: grid;
+      grid-template-columns: 6fr 3fr 3fr;
+      gap: 26px;
+      min-height: 520px;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 36px;
+      padding: 58px;
+      background: linear-gradient(120deg, #0079c4, #02b8dd);
+      overflow: hidden;
+      box-shadow: 0 35px 65px rgba(5, 77, 129, 0.35);
+      color: #fff;
+    }
+
+    .hero-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
+      opacity: 0.25;
+      mix-blend-mode: screen;
+    }
+
+    .hero-card-content {
+      position: relative;
+      max-width: 540px;
+      z-index: 1;
+    }
+
+    .hero-card h4 {
+      letter-spacing: 0.35em;
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+
+    .hero-card h1 {
+      font-size: clamp(2.75rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-card p {
+      font-size: 1rem;
+      line-height: 1.7;
+      opacity: 0.95;
+      max-width: 440px;
+      margin-bottom: 28px;
+    }
+
+    .hero-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .appointment-panel {
+      position: absolute;
+      top: 50%;
+      right: 36px;
+      transform: translateY(-50%);
+      width: clamp(320px, 45%, 420px);
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 42px 40px;
+      color: #10253e;
+      box-shadow: 0 30px 55px rgba(8, 53, 97, 0.25);
+      z-index: 2;
+      border: 1px solid #e8f1ff;
+    }
+
+    .appointment-panel .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .appointment-panel h3 {
+      font-size: 1.35rem;
+      letter-spacing: 0.02em;
+    }
+
+    .appointment-panel .panel-head .badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 15px;
+      border: 2px solid #d7e9ff;
+      display: grid;
+      place-items: center;
+      color: #00a0d8;
+      font-size: 1rem;
+    }
+
+    .appointment-panel p {
+      color: #6c7a8f;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .call-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .call-row .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #00a8d2, #00c4ea);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.25);
+    }
+
+    .call-row strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      color: #8b95a7;
+      margin-bottom: 6px;
+    }
+
+    .call-row span {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f2138;
+    }
+
+    .call-row span + span {
+      margin-top: 6px;
+    }
+
+    .panel-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(120deg, #0165c2, #00a3dc);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      box-shadow: 0 12px 25px rgba(1, 101, 194, 0.3);
+    }
+
+    .panel-button i {
+      font-size: 0.9rem;
+    }
+
+    .info-card {
+      border-radius: 28px;
+      padding: 44px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      position: relative;
+      box-shadow: 0 18px 35px rgba(7, 71, 113, 0.18);
+    }
+
+    .info-card h6 {
+      font-size: 0.9rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(16, 37, 62, 0.65);
+    }
+
+    .info-card h3 {
+      font-size: 1.25rem;
+    }
+
+    .info-card.gradient {
+      background: linear-gradient(135deg, #e3f6ff, #caebff);
+      color: #0f253f;
+    }
+
+    .info-card.gradient p {
+      color: #4c5b71;
+      line-height: 1.7;
+    }
+
+    .info-card.gradient address {
+      font-style: normal;
+      color: #0a79d6;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .info-card.teal {
+      background: linear-gradient(135deg, #04b6e1, #0297d7);
+      color: #fff;
+    }
+
+    .info-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-card li {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 12px 0;
+      font-size: 0.95rem;
+    }
+
+    .info-card li:last-child {
+      border-bottom: none;
+    }
+
+    .info-card .card-icon {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.35);
+      color: inherit;
+    }
+
+    .info-card .link-button {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 600;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    @media (max-width: 1100px) {
+      .cards-layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-card {
+        padding-bottom: 180px;
+      }
+
+      .appointment-panel {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: 100%;
+        margin-top: 110px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="cards-layout">
+    <article class="hero-card">
+      <div class="hero-card-content">
+        <h4>WELCOME TO MAXCARE</h4>
+        <h1>Committed to ensure Quality Healthcare</h1>
+        <p>Experience compassionate care, modern facilities, and the reassurance that your wellbeing is always our top priority.</p>
+        <a href="#">
+          Learn More
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="appointment-panel">
+        <div class="panel-head">
+          <h3>Get Appointment</h3>
+          <span class="badge"><i class="fas fa-plus"></i></span>
+        </div>
+        <p>Call us 24/7 with any emergency or to schedule an appointment &amp; check your health.</p>
+        <div class="call-row">
+          <div class="icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <strong>CALL US</strong>
+            <span>+811.2311.785</span>
+            <span>+811.2311.657</span>
+          </div>
+        </div>
+        <a class="panel-button" href="#">
+          Request An Appointment
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+
+    <article class="info-card gradient">
+      <h6>VISIT US</h6>
+      <div class="card-icon">
+        <i class="fas fa-building"></i>
+      </div>
+      <h3>Visit Our Center</h3>
+      <p>With more than twenty-one locations across the country, we are confident in providing the best care.</p>
+      <address>
+        Visit Our Clinic<br>
+        Office: 29 Madison Street, Studio Mia<br>
+        LA 20183, USA
+      </address>
+      <a class="link-button" href="#">
+        View All Healthcare Facilities
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </article>
+
+    <article class="info-card teal">
+      <h6>HOURS</h6>
+      <div class="card-icon">
+        <i class="fas fa-clock"></i>
+      </div>
+      <h3>Opening Hours</h3>
+      <ul>
+        <li><span>Monday – Thursday</span><span>08:00 – 18:00</span></li>
+        <li><span>Friday</span><span>08:00 – 18:00</span></li>
+        <li><span>Saturday</span><span>08:00 – 18:00</span></li>
+        <li><span>Sunday</span><span>08:00 – 18:00</span></li>
+      </ul>
+      <a class="link-button" href="#">
+        24/7 Service For Emergencies
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </article>
+  </section>
+
+</body>
+</html>
+
