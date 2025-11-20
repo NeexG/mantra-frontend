@@ -18,16 +18,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --primary: #0e1f56;
-  --accent: #02c4d9;
-  --accent-hover: #00a8bb;
-  --text-dark: #1a1a1a;
-  --text-light: #6b7280;
-  --bg-light: #f8fafc;
-  --border: #e5e7eb;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -36,15 +26,12 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--bg-light);
-  color: var(--text-dark);
-  padding: 60px 0;
-  overflow-x: hidden;
+  background: #f8fafc;
+  color: #1a1a1a;
 }
 
 .blog-section {
   position: relative;
-  padding: 50px 0;
   overflow: hidden;
   width: 100%;
 }
@@ -73,7 +60,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--accent);
+  color: #02c4d9;
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -93,7 +80,7 @@ body {
 .blog-header h2 {
   font-size: clamp(1.875rem, 4vw, 2.5rem);
   font-weight: 700;
-  color: var(--primary);
+  color: #0e1f56;
   margin: 0;
   line-height: 1.3;
 }
@@ -103,7 +90,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  background: var(--accent);
+  background: #02c4d9;
   color: #fff;
   text-decoration: none;
   border-radius: 50px;
@@ -114,10 +101,9 @@ body {
 }
 
 .view-all-btn:hover {
-  background: var(--accent-hover);
+  background: #00a8bb;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(2, 196, 217, 0.3);
 }
 
 /* Blog Slider */
@@ -146,16 +132,15 @@ body {
   background: #fff;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(14, 31, 86, 0.08);
+  transition: transform 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .blog-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
 }
 
 .blog-image-wrapper {
@@ -185,14 +170,13 @@ body {
   top: 16px;
   left: 16px;
   background: #fff;
-  color: var(--primary);
+  color: #0e1f56;
   font-size: 0.75rem;
   font-weight: 600;
   padding: 6px 14px;
   border-radius: 20px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
 
@@ -228,7 +212,7 @@ body {
   align-items: center;
   gap: 16px;
   font-size: 0.875rem;
-  color: var(--text-light);
+  color: #6b7280;
   margin-bottom: 12px;
   flex-wrap: wrap;
 }
@@ -241,13 +225,13 @@ body {
 
 .blog-meta i {
   font-size: 0.75rem;
-  color: var(--accent);
+  color: #02c4d9;
 }
 
 .blog-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--primary);
+  color: #0e1f56;
   margin-bottom: 16px;
   line-height: 1.4;
   flex: 1;
@@ -260,12 +244,12 @@ body {
 }
 
 .blog-title a:hover {
-  color: var(--accent);
+  color: #02c4d9;
 }
 
 .blog-excerpt {
   font-size: 0.9375rem;
-  color: var(--text-light);
+  color: #6b7280;
   line-height: 1.6;
   margin-bottom: 20px;
   display: -webkit-box;
@@ -281,17 +265,17 @@ body {
   gap: 8px;
   padding: 10px 20px;
   background: transparent;
-  color: var(--accent);
+  color: #02c4d9;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9375rem;
   border-radius: 50px;
-  border: 2px solid var(--accent);
+  border: 2px solid #02c4d9;
   transition: all 0.3s ease;
 }
 
 .read-more-btn:hover {
-  background: var(--accent);
+  background: #02c4d9;
   color: #fff;
   transform: translateX(4px);
 }
@@ -320,23 +304,21 @@ body {
   height: 52px;
   border-radius: 12px;
   background: #fff;
-  border: 2px solid var(--border);
-  color: var(--primary);
+  border: 2px solid #e5e7eb;
+  color: #0e1f56;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 1.125rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .custom-nav-btn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: #02c4d9;
+  border-color: #02c4d9;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(2, 196, 217, 0.3);
 }
 
 .custom-nav-btn:active {
