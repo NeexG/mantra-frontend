@@ -1,10 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Header - Modern & Professional</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -47,6 +50,7 @@
     </div>
     <div class="header-bottom">
       <div class="logo">
+        <img src="main-logo-removebg-preview.png" alt="">
       </div>
 
       <nav class="main-nav" aria-label="Main menu">
@@ -104,6 +108,27 @@
           <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
+      <div class="header-language-wrapper">
+        <div class="language-toggle-wrapper">
+          <button class="language-toggle-btn" data-lang="english" type="button">
+            <i class="fa-solid fa-globe me-2"></i>
+            <span class="lang-text">English</span>
+            <i class="fa-solid fa-chevron-down ms-2"></i>
+          </button>
+          <div class="language-dropdown">
+            <button class="lang-option" data-lang="hindi" type="button">
+              <span class="lang-flag">🇮🇳</span>
+              <span class="lang-name">हिंदी</span>
+              <i class="fa-solid fa-check lang-check"></i>
+            </button>
+            <button class="lang-option active" data-lang="english" type="button">
+              <span class="lang-flag">🇬🇧</span>
+              <span class="lang-name">English</span>
+              <i class="fa-solid fa-check lang-check"></i>
+            </button>
+          </div>
+        </div>
+      </div>
       <div class="toggle-btn">
         <a href="#"><i class="fa-solid fa-bars"></i></a>
       </div>
@@ -112,6 +137,113 @@
       </div>
     </div>
   </header>
+
+<div class="responsive-menu d-flex flex-column">
+  <!-- Navigation - First -->
+  <nav class="rm-nav position-relative" aria-label="Mobile Menu">
+    <button class="rm-close-btn btn position-absolute top-0 end-0 m-3" aria-label="Close Menu" type="button">
+      <i class="fa-solid fa-times"></i>
+    </button>
+    <ul class="rm-main list-unstyled mb-0">
+      <li>
+        <a href="/" class="d-flex justify-content-between align-items-center">Home <i class="fa-solid fa-plus"></i></a>
+        <ul class="rm-submenu list-unstyled mb-0">
+          <li><a href="#" class="d-block">Emergency Medical Clinic</a></li>
+          <li><a href="#" class="d-block">Vaccination Center/Clinic</a></li>
+          <li><a href="#" class="d-block">Doctors directory Listing</a></li>
+          <li><a href="#" class="d-block">Medical Research</a></li>
+          <li><a href="#" class="d-block">Dental Clinic</a></li>
+        </ul>
+      </li>
+      <li><a href="/about" class="d-block">About</a></li>
+      <li>
+        <a href="/pages" class="d-flex justify-content-between align-items-center">Pages <i class="fa-solid fa-plus"></i></a>
+        <ul class="rm-submenu list-unstyled mb-0">
+          <li><a href="#" class="d-block">Pricing</a></li>
+          <li><a href="#" class="d-block">Testimonials</a></li>
+          <li><a href="#" class="d-block">Doctors</a></li>
+          <li><a href="#" class="d-block">Appointment</a></li>
+          <li><a href="#" class="d-block">FAQ's</a></li>
+          <li><a href="#" class="d-block">Sign In</a></li>
+          <li><a href="#" class="d-block">Sign Up</a></li>
+          <li><a href="#" class="d-block">Reset Password</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/services" class="d-flex justify-content-between align-items-center">Services <i class="fa-solid fa-plus"></i></a>
+        <ul class="rm-submenu list-unstyled mb-0">
+          <li><a href="#" class="d-block">Service Style 1</a></li>
+          <li><a href="#" class="d-block">Service Style 2</a></li>
+          <li><a href="#" class="d-block">Service Style 3</a></li>
+          <li><a href="#" class="d-block">Service Style 4</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/doctor" class="d-flex justify-content-between align-items-center">Doctor <i class="fa-solid fa-plus"></i></a>
+        <ul class="rm-submenu list-unstyled mb-0">
+          <li><a href="#" class="d-block">Doctor Style 1</a></li>
+          <li><a href="#" class="d-block">Doctor Style 2</a></li>
+          <li><a href="#" class="d-block">Doctor Style 3</a></li>
+          <li><a href="#" class="d-block">Doctor Style 4</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/blog" class="d-flex justify-content-between align-items-center">Blog <i class="fa-solid fa-plus"></i></a>
+        <ul class="rm-submenu list-unstyled mb-0">
+          <li><a href="#" class="d-block">Blog Grid</a></li>
+          <li><a href="#" class="d-block">Blog Left Sidebar</a></li>
+          <li><a href="#" class="d-block">Blog Right Sidebar</a></li>
+          <li><a href="#" class="d-block">Blog Details</a></li>
+        </ul>
+      </li>
+      <li><a href="/contact" class="d-block">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Language Selector - Before Quote Button -->
+  <div class="rm-language-selector">
+    <div class="language-toggle-wrapper">
+      <button class="language-toggle-btn" data-lang="english" type="button">
+        <i class="fa-solid fa-globe me-2"></i>
+        <span class="lang-text">English</span>
+        <i class="fa-solid fa-chevron-down ms-2"></i>
+      </button>
+      <div class="language-dropdown">
+        <button class="lang-option" data-lang="hindi" type="button">
+          <span class="lang-flag">🇮🇳</span>
+          <span class="lang-name">हिंदी</span>
+          <i class="fa-solid fa-check lang-check"></i>
+        </button>
+        <button class="lang-option active" data-lang="english" type="button">
+          <span class="lang-flag">🇬🇧</span>
+          <span class="lang-name">English</span>
+          <i class="fa-solid fa-check lang-check"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quote Button - Second -->
+  <div class="rm-btn text-center">
+    <a href="#" class="btn">Get A Quote</a>
+  </div>
+
+  <!-- Top Info Bar - Last (Bottom) -->
+  <div class="rm-topbar">
+    <div class="rm-left d-flex flex-column gap-3">
+      <p class="mb-0 d-flex align-items-center gap-2"><i class="fa-solid fa-clock"></i> Mon-Fri 9am-5pm</p>
+      <p class="mb-0 d-flex align-items-center gap-2"><i class="fa-solid fa-phone"></i> <a href="tel:+12345678900">+1 (234) 567-8900</a></p>
+      <p class="mb-0 d-flex align-items-center gap-2"><i class="fa-solid fa-envelope"></i> <a href="mailto:hello@info.com">hello@info.com</a></p>
+    </div>
+    <div class="rm-right d-flex justify-content-center gap-2 mt-3">
+      <a href="#" class="social-icon d-inline-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="social-icon d-inline-flex align-items-center justify-content-center"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" class="social-icon d-inline-flex align-items-center justify-content-center"><i class="fa-brands fa-pinterest-p"></i></a>
+      <a href="#" class="social-icon d-inline-flex align-items-center justify-content-center"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </div>
+</div>
+
 
   <style>
     * {
@@ -396,6 +528,108 @@
       transform: translateX(2px);
     }
 
+    /* Language Selector - Desktop */
+    .header-language-wrapper {
+      margin-left: 20px;
+      position: relative;
+    }
+    .header-language-wrapper .language-toggle-wrapper {
+      position: relative;
+    }
+    .header-language-wrapper .language-toggle-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      background: rgba(26, 118, 209, 0.08);
+      border: 2px solid rgba(26, 118, 209, 0.2);
+      border-radius: 8px;
+      color: #0e1f56;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .header-language-wrapper .language-toggle-btn:hover {
+      background: rgba(26, 118, 209, 0.15);
+      border-color: #1A76D1;
+      color: #1A76D1;
+    }
+    .header-language-wrapper .language-toggle-btn.active {
+      background: linear-gradient(135deg, #1A76D1 0%, #02c4d9 100%);
+      border-color: #1A76D1;
+      color: #fff;
+    }
+    .header-language-wrapper .language-toggle-btn.active i.fa-chevron-down {
+      transform: rotate(180deg);
+      transition: transform 0.3s ease;
+    }
+    .header-language-wrapper .language-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 180px;
+      background: #fff;
+      border: 2px solid #dee2e6;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      overflow: hidden;
+    }
+    .header-language-wrapper .language-toggle-wrapper.active .language-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .header-language-wrapper .lang-option {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #f0f0f0;
+      color: #0e1f56;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .header-language-wrapper .lang-option:last-child {
+      border-bottom: none;
+    }
+    .header-language-wrapper .lang-option:hover {
+      background: rgba(26, 118, 209, 0.08);
+      color: #1A76D1;
+    }
+    .header-language-wrapper .lang-option.active {
+      background: rgba(26, 118, 209, 0.1);
+      color: #1A76D1;
+    }
+    .header-language-wrapper .lang-flag {
+      font-size: 1.25rem;
+      width: 24px;
+      text-align: center;
+    }
+    .header-language-wrapper .lang-name {
+      flex: 1;
+    }
+    .header-language-wrapper .lang-check {
+      color: #1A76D1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .header-language-wrapper .lang-option.active .lang-check {
+      opacity: 1;
+    }
+
     /* Header Button */
     .header-btn {
       margin-left: 20px;
@@ -475,398 +709,596 @@
     .toggle-btn a:hover i {
       transform: rotate(90deg);
     }
+/* responsive */
+/* === Base Styles === */
+.responsive-menu {
+  display: none; /* Hidden on desktop by default */
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow-y: auto;
+  max-height: 100vh;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
-    /* Responsive Design */
-    @media screen and (max-width: 1024px) {
-      .header-top {
-        padding: 12px 4%;
-      }
+@media (min-width: 768px) {
+  .responsive-menu {
+    max-width: 400px;
+  }
+}
 
-      .header-bottom {
-        padding: 16px 4%;
-      }
+.responsive-menu.active {
+  transform: translateX(0);
+  display: flex;
+}
 
-      .main-nav .main {
-        gap: 4px;
-      }
+/* Overlay for mobile menu */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-      .main-nav .main > li > a {
-        padding: 10px 12px;
-        font-size: 0.875rem;
-      }
+.menu-overlay.active {
+  display: block;
+  opacity: 1;
+}
 
-      .header-btn a {
-        padding: 10px 20px;
-        font-size: 0.875rem;
-      }
-    }
+/* Top Info Bar - Custom styling only */
+.rm-topbar {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #041143 0%, #061a66 100%);
+}
+.rm-topbar .rm-left p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+}
+.rm-topbar .rm-left p a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+.rm-topbar .rm-left p i {
+  color: #fff;
+  font-size: 0.75rem;
+  background: linear-gradient(135deg, #02c4d9, #1A76D1);
+  padding: 8px;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.rm-topbar .rm-left p a:hover {
+  color: #02c4d9;
+  transition: color 0.4s ease;
+}
+.rm-topbar .social-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.rm-topbar .social-icon:hover {
+  background: linear-gradient(135deg, #02c4d9, #1A76D1);
+  border-color: transparent;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(2, 196, 217, 0.4);
+}
+.rm-topbar .social-icon i {
+  color: #fff;
+  font-size: 0.875rem;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.rm-topbar .social-icon:hover i {
+  transform: scale(1.15) rotate(5deg);
+}
 
-    @media screen and (max-width: 768px) {
-      .header-top {
-        padding: 10px 4%;
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
-      }
+/* Language Selector - Custom styling */
+.rm-language-selector {
+  padding: 16px 20px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.language-toggle-wrapper {
+  position: relative;
+  width: 100%;
+}
+.language-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  color: #0e1f56;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.language-toggle-btn:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+  border-color: #1A76D1;
+  color: #1A76D1;
+}
+.language-toggle-btn.active {
+  background: linear-gradient(135deg, #1A76D1 0%, #02c4d9 100%);
+  border-color: #1A76D1;
+  color: #fff;
+}
+.language-toggle-btn.active i.fa-chevron-down {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+.language-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  overflow: hidden;
+}
+.language-toggle-wrapper.active .language-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+  color: #0e1f56;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.lang-option:last-child {
+  border-bottom: none;
+}
+.lang-option:hover {
+  background: rgba(26, 118, 209, 0.08);
+  color: #1A76D1;
+}
+.lang-option.active {
+  background: rgba(26, 118, 209, 0.1);
+  color: #1A76D1;
+}
+.lang-flag {
+  font-size: 1.25rem;
+  width: 24px;
+  text-align: center;
+}
+.lang-name {
+  flex: 1;
+}
+.lang-check {
+  color: #1A76D1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.lang-option.active .lang-check {
+  opacity: 1;
+}
 
-      .ht-left {
-        gap: 20px;
-        width: 100%;
-      }
+/* Quote Button - Custom styling only */
+.rm-btn {
+  padding: 16px 20px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.rm-btn .btn {
+  background: linear-gradient(135deg, #02c4d9, #1A76D1);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  box-shadow: 0 4px 15px rgba(2, 196, 217, 0.3);
+  transition: all 0.5s ease;
+}
+.rm-btn .btn:hover {
+  background: linear-gradient(135deg, #00a8bb, #1565C0);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 196, 217, 0.4);
+  color: #fff;
+}
 
-      .ht-left p {
-        font-size: 0.8125rem;
-      }
+/* Navigation - Custom styling only */
+.rm-nav {
+  padding: 20px;
+  background: #fff;
+}
+.rm-main > li {
+  border-bottom: 1px solid #eee;
+}
+.rm-main > li:last-child {
+  border-bottom: none;
+}
+.rm-main > li > a {
+  padding: 15px 12px;
+  color: #0e1f56;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 6px;
+  margin: 2px 0;
+}
+.rm-main > li > a:hover {
+  background: rgba(26, 118, 209, 0.08);
+  color: #1A76D1;
+  transition: all 0.3s ease;
+}
+.rm-main > li.active > a {
+  background: rgba(26, 118, 209, 0.1);
+  color: #1A76D1;
+}
+.rm-main > li > a i {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+.rm-main > li.active > a i {
+  transform: rotate(180deg);
+}
 
-      .ht-right {
-        width: 100%;
-        justify-content: flex-start;
-      }
+/* Submenu - Custom styling only */
+.rm-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #f8f9fa;
+}
+.rm-main > li.active .rm-submenu {
+  max-height: 500px;
+}
+.rm-submenu li {
+  border-bottom: 1px solid #eee;
+}
+.rm-submenu li:last-child {
+  border-bottom: none;
+}
+.rm-submenu li a {
+  padding: 12px 20px 12px 32px;
+  font-size: 0.875rem;
+  color: #4b5563;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+.rm-submenu li a:hover {
+  color: #1A76D1;
+  background: rgba(26, 118, 209, 0.05);
+  border-left-color: #1A76D1;
+  padding-left: 36px;
+}
 
-      .header-bottom {
-        padding: 14px 4%;
-        position: relative;
-      }
+/* Close button - Custom styling only */
+.rm-close-btn {
+  background: rgba(26, 118, 209, 0.1);
+  border: 2px solid #1A76D1;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  color: #1A76D1;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+.rm-close-btn:hover {
+  background: #1A76D1;
+  color: #fff;
+  transform: rotate(90deg) scale(1.1);
+}
 
-      .main-nav {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 280px;
-        height: 100vh;
-        background: #fff;
-        box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
-        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 10000;
-        overflow-y: auto;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-      }
+/* Mobile First: Display */
+@media (max-width: 1024px) {
+  .responsive-menu {
+    display: flex;
+  }
+}
 
-      .main-nav.active {
-        left: 0;
-      }
+/* Optional Scrollbar styling */
+.responsive-menu::-webkit-scrollbar {
+  width: 6px;
+}
+.responsive-menu::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+.responsive-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.3);
+}
 
-      .mobile-close-btn {
-        display: none;
-      }
+/* Responsive finish */
 
-      .main-nav.active .mobile-close-btn {
-        display: flex !important;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 44px;
-        height: 44px;
-        background: rgba(26, 118, 209, 0.1);
-        border: 2px solid #1A76D1;
-        border-radius: 8px;
-        color: #1A76D1;
-        font-size: 1.5rem;
-        cursor: pointer;
-        z-index: 10001;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        margin: 0;
-        padding: 0;
-        box-shadow: 0 4px 12px rgba(26, 118, 209, 0.2);
-        will-change: transform, background, box-shadow;
-      }
+@media (max-width: 991px) {
+  nav.main-nav {
+    display: none;
+  }
+  .header-btn {
+    display: none;
+  }
+  .header-language-wrapper {
+    display: none;
+  }
+  .toggle-btn {
+    display: block;
+  }
+  .header-top {
+    display: none;
+  }
+}
 
-      .main-nav.active .mobile-close-btn:hover {
-        background: #1A76D1;
-        color: #fff;
-        transform: rotate(90deg) scale(1.1);
-        box-shadow: 0 8px 20px rgba(26, 118, 209, 0.4);
-      }
+/* 2️⃣ Tablets (481px - 991px) - Already covered above */
 
-      .main-nav .main {
-        flex-direction: column;
-        gap: 0;
-        width: 100%;
-        padding: 80px 20px 40px;
-      }
+/* 3️⃣ Laptops (992px - 1024px) */
+@media (min-width: 992px) and (max-width: 1024px) {
+  nav.main-nav {
+    display: none;
+  }
+  .header-btn {
+    display: none;
+  }
+  .toggle-btn {
+    display: block;
+  }
+  .header-top {
+    display: none;
+  }
+  .rm-topbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 8%;
+  }
+  .rm-topbar .rm-left {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .rm-topbar .rm-right {
+    margin-top: 0;
+  }
+}
+/* 4️⃣ Desktops (1025px +) */
+@media (min-width: 1025px) {
 
-      .main-nav .main > li {
-        width: 100%;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      }
+}
 
-      .main-nav .main > li > a {
-        color: #0e1f56;
-        padding: 16px 0;
-        width: 100%;
-        justify-content: space-between;
-        border-radius: 0;
-        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        will-change: background, color, transform;
-      }
-
-      .main-nav .main > li > a:hover {
-        background: rgba(26, 118, 209, 0.08);
-        color: #1A76D1;
-        transform: translateX(4px);
-      }
-
-      .sub-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        width: 100%;
-        box-shadow: none;
-        border: none;
-        background: rgba(26, 118, 209, 0.03);
-        margin-top: 0;
-        border-radius: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-
-      .main-nav .main > li:hover > .sub-menu,
-      .main-nav .main > li.active > .sub-menu {
-        max-height: 500px;
-      }
-
-      .sub-menu li a {
-        padding: 12px 0 12px 30px;
-        border-left: none;
-        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        will-change: padding, transform;
-      }
-
-      .sub-menu li:hover a {
-        padding-left: 38px;
-        border-left: none;
-        transform: translateX(2px);
-      }
-
-      .toggle-btn {
-        display: block;
-        order: 2;
-        z-index: 10001;
-        position: relative;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-      }
-
-      .toggle-btn a {
-        color: #0e1f56;
-        font-size: 1.75rem;
-        background: transparent;
-        border: 2px solid rgba(14, 31, 86, 0.1);
-        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        will-change: transform, background;
-      }
-
-      .toggle-btn a:hover {
-        background: rgba(26, 118, 209, 0.1);
-        border-color: #1A76D1;
-        transform: scale(1.05);
-      }
-
-      .toggle-btn a i {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        font-size: 1.5rem;
-        width: 24px;
-        height: 24px;
-        line-height: 24px;
-        text-align: center;
-      }
-
-      /* Hide hamburger when menu is active */
-      .header-bottom.menu-open .toggle-btn {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
-
-      .header-btn {
-        order: 3;
-        margin-left: 12px;
-      }
-
-      .header-btn a {
-        padding: 10px 18px;
-        font-size: 0.875rem;
-      }
-
-      .logo {
-        order: 1;
-      }
-    }
-
-    @media screen and (max-width: 576px) {
-      .header-top {
-        padding: 10px 15px;
-      }
-
-      .ht-left {
-        gap: 16px;
-      }
-
-      .ht-left p:first-child {
-        display: none;
-      }
-
-      .ht-left p:last-child {
-        display: none;
-      }
-
-      .ht-left p {
-        font-size: 0.75rem;
-      }
-
-      .ht-left p i {
-        width: 24px;
-        height: 24px;
-        font-size: 0.625rem;
-        padding: 6px;
-      }
-
-      .ht-right {
-        gap: 8px;
-      }
-
-      .social-icon-link {
-        width: 32px;
-        height: 32px;
-      }
-
-      .social-icon-link i {
-        font-size: 0.75rem;
-      }
-
-      .header-bottom {
-        padding: 12px 15px;
-      }
-
-      .main-nav {
-        width: 100%;
-      }
-
-      .header-btn a {
-        padding: 8px 16px;
-        font-size: 0.8125rem;
-      }
-    }
-
-    @media screen and (max-width: 400px) {
-      .ht-left p {
-        font-size: 0.6875rem;
-      }
-
-      .header-btn a {
-        display: none;
-      }
-    }
   </style>
 
   <script>
-    const toggleButton = document.querySelector(".toggle-btn a");
-    const mainMenu = document.querySelector(".main-nav");
-    const mobileCloseBtn = document.querySelector(".mobile-close-btn");
-    const headerBottom = document.querySelector(".header-bottom");
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.querySelector('.toggle-btn a');
+  const responsiveMenu = document.querySelector('.responsive-menu');
+  const rmCloseBtn = document.querySelector('.rm-close-btn');
+  const menuOverlay = document.createElement('div');
+  menuOverlay.className = 'menu-overlay';
+  document.body.appendChild(menuOverlay);
 
-    if (toggleButton && mainMenu) {
-      const icon = toggleButton.querySelector('i');
-      
-      // Function to close menu
-      function closeMenu() {
-        mainMenu.classList.remove('active');
-        if (headerBottom) {
-          headerBottom.classList.remove('menu-open');
-        }
-        if (icon) {
-          icon.className = 'fa-solid fa-bars';
-        }
-        if (toggleButton) {
-          toggleButton.classList.remove('menu-active');
-        }
-      }
+  if (!toggleButton || !responsiveMenu) return;
 
-      // Function to open menu
-      function openMenu() {
-        mainMenu.classList.add('active');
-        if (headerBottom) {
-          headerBottom.classList.add('menu-open');
-        }
-        if (icon) {
-          icon.className = 'fa-solid fa-bars';
-        }
-        if (toggleButton) {
-          toggleButton.classList.add('menu-active');
-        }
-      }
+  const icon = toggleButton.querySelector('i');
 
-      // Toggle button click (hamburger icon)
-      toggleButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        if (mainMenu.classList.contains('active')) {
-          closeMenu();
-        } else {
-          openMenu();
-        }
-      });
+  // Open/Close functions
+  const openMenu = () => {
+    responsiveMenu.classList.add('active');
+    menuOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (icon) icon.className = 'fa-solid fa-times';
+  };
 
-      // Mobile close button click
-      if (mobileCloseBtn) {
-        mobileCloseBtn.addEventListener('click', (event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          closeMenu();
-        });
-      }
+  const closeMenu = () => {
+    responsiveMenu.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    if (icon) icon.className = 'fa-solid fa-bars';
+  };
 
-      // Close menu when clicking outside
-      document.addEventListener('click', (event) => {
-        if (mainMenu.classList.contains('active') && 
-            !mainMenu.contains(event.target) && 
-            !toggleButton.contains(event.target) &&
-            !mobileCloseBtn.contains(event.target)) {
-          closeMenu();
-        }
-      });
+  // Hamburger click
+  toggleButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (responsiveMenu.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
 
-      // Close menu when clicking on a link (mobile)
-      if (window.innerWidth <= 768) {
-        const menuLinks = document.querySelectorAll('.main-nav .main > li > a:not([href="#"]):not([href*="/"])');
-        menuLinks.forEach(link => {
-          if (!link.nextElementSibling || !link.nextElementSibling.classList.contains('sub-menu')) {
-            link.addEventListener('click', () => {
-              closeMenu();
-            });
-          }
-        });
-      }
+  // Close button inside menu
+  if (rmCloseBtn) {
+    rmCloseBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeMenu();
+    });
+  }
 
-      // Handle submenu toggle on mobile
-      const menuItems = document.querySelectorAll('.main-nav .main > li > a');
-      menuItems.forEach(item => {
-        if (item.nextElementSibling && item.nextElementSibling.classList.contains('sub-menu')) {
-          item.addEventListener('click', (event) => {
-            if (window.innerWidth <= 768) {
-              event.preventDefault();
-              const parent = item.parentElement;
-              parent.classList.toggle('active');
+  // Close on overlay click
+  menuOverlay.addEventListener('click', () => {
+    closeMenu();
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (responsiveMenu.classList.contains('active') &&
+        !responsiveMenu.contains(e.target) &&
+        !toggleButton.contains(e.target) &&
+        !menuOverlay.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Submenu toggle for mobile menu
+  document.querySelectorAll('.rm-main > li > a').forEach(item => {
+    const submenu = item.nextElementSibling;
+    if (submenu && submenu.classList.contains('rm-submenu')) {
+      item.addEventListener('click', (e) => {
+        if (window.innerWidth <= 1024) {
+          e.preventDefault();
+          const parent = item.parentElement;
+          parent.classList.toggle('active');
+          
+          // Close other submenus
+          document.querySelectorAll('.rm-main > li').forEach(li => {
+            if (li !== parent) {
+              li.classList.remove('active');
             }
           });
         }
       });
+    }
+  });
 
-      // Handle window resize
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && mainMenu.classList.contains('active')) {
-          closeMenu();
+  // Auto-close on resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (window.innerWidth > 1024 && responsiveMenu.classList.contains('active')) {
+        closeMenu();
+      }
+    }, 250);
+  });
+
+  // Close on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && responsiveMenu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
+  // Language Selector Functionality
+  const languageToggleWrappers = document.querySelectorAll('.language-toggle-wrapper');
+  const languageToggleBtns = document.querySelectorAll('.language-toggle-btn');
+  const langOptions = document.querySelectorAll('.lang-option');
+  let currentLang = 'english'; // Default language
+
+  // Toggle language dropdown
+  languageToggleBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wrapper = btn.closest('.language-toggle-wrapper');
+      wrapper.classList.toggle('active');
+      
+      // Close other dropdowns
+      languageToggleWrappers.forEach(w => {
+        if (w !== wrapper) {
+          w.classList.remove('active');
         }
       });
-    }
-  </script>
-</body>
+    });
+  });
 
+  // Select language option
+  langOptions.forEach(option => {
+    option.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const lang = option.getAttribute('data-lang');
+      const wrapper = option.closest('.language-toggle-wrapper');
+      
+      // Update active state
+      langOptions.forEach(opt => {
+        if (opt.closest('.language-toggle-wrapper') === wrapper) {
+          opt.classList.remove('active');
+        }
+      });
+      option.classList.add('active');
+      
+      // Update toggle button
+      const toggleBtn = wrapper.querySelector('.language-toggle-btn');
+      const langText = wrapper.querySelector('.lang-text');
+      
+      if (lang === 'hindi') {
+        langText.textContent = 'हिंदी';
+        toggleBtn.classList.add('active');
+      } else {
+        langText.textContent = 'English';
+        toggleBtn.classList.remove('active');
+      }
+      
+      // Update all language selectors to stay in sync
+      languageToggleBtns.forEach(btn => {
+        const btnLang = btn.getAttribute('data-lang');
+        const btnText = btn.querySelector('.lang-text');
+        if (btnLang === lang) {
+          if (lang === 'hindi') {
+            btnText.textContent = 'हिंदी';
+            btn.classList.add('active');
+          } else {
+            btnText.textContent = 'English';
+            btn.classList.remove('active');
+          }
+        }
+      });
+      
+      currentLang = lang;
+      wrapper.classList.remove('active');
+      
+      // Here you can add language switching logic
+      // For example: change page content, reload with language parameter, etc.
+      console.log('Language changed to:', lang);
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.language-toggle-wrapper')) {
+      languageToggleWrappers.forEach(wrapper => {
+        wrapper.classList.remove('active');
+      });
+    }
+  });
+
+  // Close dropdowns on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      languageToggleWrappers.forEach(wrapper => {
+        wrapper.classList.remove('active');
+      });
+    }
+  });
+});
+  </script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+ 
 </html>
