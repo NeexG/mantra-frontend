@@ -18,14 +18,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --primary: #0e1f56;
-  --accent: #02c4d9;
-  --text-dark: #1a1a1a;
-  --text-light: #6b7280;
-  --bg-light: #f8fafc;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -34,14 +26,12 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--bg-light);
-  color: var(--text-dark);
-  padding: 80px 0;
+  background: #f8fafc;
+  color: #1a1a1a;
 }
 
 .team-section {
   position: relative;
-  padding: 60px 0;
 }
 
 .team-header {
@@ -53,7 +43,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--accent);
+  color: #02c4d9;
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -73,13 +63,13 @@ body {
 .team-header h2 {
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
-  color: var(--primary);
+  color: #0e1f56;
   margin-bottom: 16px;
 }
 
 .team-header p {
   font-size: 1.125rem;
-  color: var(--text-light);
+  color: #6b7280;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.7;
@@ -88,7 +78,12 @@ body {
 /* Team Member Card */
 .team-slider {
   position: relative;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
+}
+
+.team-slider-wrapper {
+  position: relative;
+  padding: 0 1rem;
 }
 
 .team-member {
@@ -96,20 +91,21 @@ body {
   background: #fff;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(14, 31, 86, 0.08);
+  transition: transform 0.3s ease;
   height: 100%;
+  box-shadow: none;
 }
 
 .team-member:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: none;
 }
 
 .team-member-img {
   position: relative;
   width: 100%;
-  padding-top: 100%;
+  padding-top: 80%;
   overflow: hidden;
   background: #e5e7eb;
 }
@@ -121,6 +117,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   transition: transform 0.4s ease;
 }
 
@@ -129,20 +126,20 @@ body {
 }
 
 .team-member-content {
-  padding: 24px;
+  padding: 20px 22px 22px;
   text-align: center;
 }
 
 .team-member-name {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--primary);
+  color: #0e1f56;
   margin-bottom: 6px;
 }
 
 .team-member-role {
   font-size: 0.9375rem;
-  color: var(--text-light);
+  color: #6b7280;
   margin-bottom: 16px;
   font-weight: 500;
 }
@@ -158,8 +155,8 @@ body {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: var(--bg-light);
-  color: var(--primary);
+  background: #f8fafc;
+  color: #0e1f56;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,7 +172,7 @@ body {
 }
 
 .team-social a:hover {
-  background: var(--accent);
+  background: #02c4d9;
   color: #fff;
   transform: translateY(-2px);
 }
@@ -183,35 +180,39 @@ body {
 /* Custom Navigation Buttons - Bottom Right */
 .custom-nav-buttons {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 50%;
+  left: -10px;
+  right: -10px;
   display: flex;
-  gap: 12px;
+  justify-content: space-between;
+  transform: translateY(-50%);
   z-index: 10;
+  pointer-events: none;
 }
 
 .custom-nav-btn {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   background: #fff;
-  border: 2px solid #e5e7eb;
-  color: var(--primary);
+  border: 1px solid rgba(14, 31, 86, 0.12);
+  color: #0e1f56;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1.125rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
+  box-shadow: 0 10px 25px rgba(14, 31, 86, 0.12);
+  pointer-events: auto;
 }
 
 .custom-nav-btn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: #02c4d9;
+  border-color: #02c4d9;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(2, 196, 217, 0.3);
+  box-shadow: 0 14px 30px rgba(2, 196, 217, 0.25);
 }
 
 .custom-nav-btn:active {
@@ -259,13 +260,26 @@ body {
   }
 
   .team-slider {
-    padding-bottom: 70px;
+    padding-bottom: 60px;
+  }
+
+  .team-slider-wrapper {
+    padding: 0;
   }
 
   .custom-nav-buttons {
-    position: relative;
-    justify-content: center;
-    margin-top: 30px;
+    position: absolute;
+    top: 45%;
+    left: -10px;
+    right: -10px;
+    transform: translateY(-50%);
+    justify-content: space-between;
+    margin-top: 0;
+    pointer-events: none;
+  }
+
+  .custom-nav-btn {
+    pointer-events: auto;
   }
 }
 
@@ -435,33 +449,29 @@ body {
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  const teamSwiper = new Swiper('.team-slider', {
-    slidesPerView: 1,
-    spaceBetween: 24,
-    loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: '.team-next',
-      prevEl: '.team-prev',
-    },
-    breakpoints: {
-      576: {
-        slidesPerView: 2,
-        spaceBetween: 24,
+    const teamSwiper = new Swiper('.team-slider', {
+      slidesPerView: 1.1,
+      spaceBetween: 24,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
       },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 24,
+      navigation: {
+        nextEl: '.team-next',
+        prevEl: '.team-prev',
       },
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 30,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 24,
+        }
       }
-    }
-  });
+    });
 
   // Update button disabled state
   teamSwiper.on('slideChange', function () {
