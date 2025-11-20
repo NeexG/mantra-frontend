@@ -132,6 +132,11 @@
       <div class="toggle-btn">
         <a href="#"><i class="fa-solid fa-bars"></i></a>
       </div>
+      <div class="mobile-quick-menu" aria-label="Quick mobile links">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+      </div>
       <div class="header-btn">
         <a href="#">Get A Quote</a>
       </div>
@@ -141,7 +146,7 @@
 <div class="responsive-menu d-flex flex-column">
   <!-- Navigation - First -->
   <nav class="rm-nav position-relative" aria-label="Mobile Menu">
-    <button class="rm-close-btn btn position-absolute top-0 end-0 m-3" aria-label="Close Menu" type="button">
+    <button class="rm-close-btn btn position-absolute end-0 m-3" aria-label="Close Menu" type="button">
       <i class="fa-solid fa-times"></i>
     </button>
     <ul class="rm-main list-unstyled mb-0">
@@ -240,6 +245,11 @@
       <a href="#" class="social-icon d-inline-flex align-items-center justify-content-center"><i class="fa-brands fa-x-twitter"></i></a>
       <a href="#" class="social-icon d-inline-flex align-items-center justify-content-center"><i class="fa-brands fa-pinterest-p"></i></a>
       <a href="#" class="social-icon d-inline-flex align-items-center justify-content-center"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <div class="rm-quick-links mt-3">
+      <a href="/services/emergency" class="quick-link">Emergency Care</a>
+      <a href="/appointment" class="quick-link">Book Visit</a>
+      <a href="/insurance" class="quick-link">Insurance</a>
     </div>
   </div>
 </div>
@@ -374,7 +384,7 @@
     }
 
     .logo img {
-      height: 45px;
+      height: 38px;
       width: auto;
       display: block;
     }
@@ -676,22 +686,25 @@
 
     /* Toggle Button */
     .toggle-btn {
-      display: none;
+  display: none;
+  align-items: center;
+  margin-top: 15px;
+  justify-content: center;
     }
 
     .toggle-btn a {
-      color: #0e1f56;
-      font-size: 1.5rem;
-      text-decoration: none;
-      padding: 8px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      border-radius: 6px;
-      min-width: 44px;
-      min-height: 44px;
-      will-change: transform, background, color;
+  color: #0e1f56;
+  font-size: 1.35rem;
+  text-decoration: none;
+  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 8px;
+  min-width: 40px;
+  min-height: 40px;
+  will-change: transform, background, color;
     }
 
     .toggle-btn a:hover {
@@ -709,6 +722,31 @@
     .toggle-btn a:hover i {
       transform: rotate(90deg);
     }
+
+/* Mobile quick menu */
+.mobile-quick-menu {
+  display: none;
+  width: 100%;
+  gap: 12px;
+  margin: 12px 0 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.mobile-quick-menu::-webkit-scrollbar {
+  display: none;
+}
+.mobile-quick-menu a {
+  flex: 1 0 calc(33.333% - 8px);
+  min-width: calc(33.333% - 8px);
+  padding: 8px 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #0e1f56;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
 /* responsive */
 /* === Base Styles === */
 .responsive-menu {
@@ -810,6 +848,26 @@
 }
 .rm-topbar .social-icon:hover i {
   transform: scale(1.15) rotate(5deg);
+}
+.rm-quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 12px;
+}
+.rm-quick-links .quick-link {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.rm-quick-links .quick-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 /* Language Selector - Custom styling */
@@ -945,6 +1003,7 @@
 /* Navigation - Custom styling only */
 .rm-nav {
   padding: 20px;
+  padding-top: 64px; /* create space so close icon does not overlap first item */
   background: #fff;
 }
 .rm-main > li {
@@ -1019,6 +1078,10 @@
   color: #1A76D1;
   width: 40px;
   height: 40px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  margin: 0;
   transition: all 0.3s ease;
   z-index: 10001;
 }
@@ -1053,6 +1116,10 @@
   nav.main-nav {
     display: none;
   }
+  .header-bottom {
+    align-items: center;
+    gap: 12px;
+  }
   .header-btn {
     display: none;
   }
@@ -1060,10 +1127,23 @@
     display: none;
   }
   .toggle-btn {
-    display: block;
+    display: flex;
+    order: 3;
+    margin-left: auto;
+    align-self: center;
   }
   .header-top {
     display: none;
+  }
+  .mobile-quick-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10px;
+    order: 2;
+  }
+  .logo {
+    order: 1;
   }
 }
 
