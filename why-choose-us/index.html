@@ -28,30 +28,23 @@
     />
 
     <style>
-      :root {
-        --primary: #0e1f56;
-        --accent: #06c167;
-        --dark-blue: #061a66;
-        --body: #4b587f;
-        --card: #041143;
-      }
-
       body {
         font-family: "Inter", sans-serif;
         background: #f6f8fd;
         padding: 60px 0;
-        color: var(--primary);
+        color: #0e1f56;
       }
 
       .section-tag {
         font-weight: 600;
         text-transform: uppercase;
         color: #16c984;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.08em;
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        margin-bottom: 20px;
+        gap: 6px;
+        font-size: 0.7rem;
+        margin-bottom: 16px;
       }
 
       .section-tag::before,
@@ -64,15 +57,16 @@
       }
 
       h1 {
-        font-size: clamp(2rem, 4vw, 3.3rem);
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
         font-weight: 700;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
       }
 
       .lead-text {
-        color: var(--body);
+        color: #4b587f;
         max-width: 520px;
-        margin-bottom: 30px;
+        margin-bottom: 24px;
+        font-size: 0.9rem;
       }
 
       .why-list {
@@ -83,15 +77,15 @@
 
       .why-list li {
         display: flex;
-        gap: 18px;
-        margin-bottom: 22px;
+        gap: 16px;
+        margin-bottom: 18px;
       }
 
       .icon-badge {
         width: 44px;
         height: 44px;
         background: rgba(22, 201, 132, 0.15);
-        color: var(--accent);
+        color: #06c167;
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -101,12 +95,14 @@
 
       .list-title {
         font-weight: 700;
-        font-size: 1.05rem;
-        margin-bottom: 6px;
+        font-size: 0.95rem;
+        margin-bottom: 4px;
       }
 
       .list-text {
-        color: var(--body);
+        color: #4b587f;
+        font-size: 0.88rem;
+        line-height: 1.5;
       }
 
       .cta-group {
@@ -133,7 +129,7 @@
         align-items: center;
         gap: 12px;
         font-weight: 600;
-        color: var(--primary);
+        color: #0e1f56;
       }
 
       .rating-badge img {
@@ -163,7 +159,7 @@
         left: 50%;
         transform: translateX(-50%);
         width: clamp(260px, 80%, 520px);
-        background: var(--card);
+        background: #041143;
         color: #fff;
         border-radius: 22px;
         padding: 28px;
@@ -247,36 +243,31 @@
       }
 
       @media (max-width: 992px) {
-        .hero-media {
-          margin-top: 40px;
-          padding: 30px;
-          min-height: auto;
-        }
-
-        .testimonial-card {
-          position: static;
-          transform: none;
-          margin-top: 25px;
+        .rating-badge {
+          justify-content: center;
+          text-align: center;
           width: 100%;
         }
 
-        .hero-media img {
-          height: auto;
+        .cta-group {
+          justify-content: center;
+          gap: 16px;
         }
 
-        .swiper-button-prev,
-        .swiper-button-next {
-          bottom: 15px;
-          width: 42px;
-          height: 42px;
+        h1 {
+          font-size: 2rem;
         }
 
-        .swiper-button-prev {
-          right: 75px;
+        .lead-text {
+          font-size: 0.9rem;
         }
 
-        .swiper-button-next {
-          right: 20px;
+        .list-title {
+          font-size: 0.95rem;
+        }
+
+        .list-text {
+          font-size: 0.85rem;
         }
       }
 
@@ -285,12 +276,21 @@
           padding: 40px 0;
         }
 
+        .section-tag {
+          font-size: 0.6rem;
+          letter-spacing: 0.06em;
+        }
+
         h1 {
-          font-size: 2.2rem;
+          font-size: 1.7rem;
           text-align: center;
         }
 
-        .lead-text,
+        .lead-text {
+          font-size: 0.85rem;
+          text-align: center;
+        }
+
         .why-list {
           text-align: center;
         }
@@ -298,36 +298,15 @@
         .why-list li {
           flex-direction: column;
           align-items: center;
+          margin-bottom: 16px;
         }
 
-        .cta-group {
-          justify-content: center;
+        .list-title {
+          font-size: 0.9rem;
         }
 
-        .rating-badge {
-          justify-content: center;
-          text-align: center;
-        }
-
-        .hero-media {
-          padding: 20px;
-        }
-
-        .hero-media img {
-          border-radius: 16px;
-        }
-
-        .testimonial-card {
-          padding: 22px;
-          border-radius: 18px;
-          width: 100%;
-        }
-
-        .swiper-button-prev,
-        .swiper-button-next {
-          width: 38px;
-          height: 38px;
-          bottom: 12px;
+        .list-text {
+          font-size: 0.8rem;
         }
 
         .cta-group {
@@ -341,26 +320,10 @@
           justify-content: center;
         }
 
-        .testimonial-header {
-          flex-direction: column;
+        .rating-badge {
+          justify-content: center;
           text-align: center;
-        }
-
-        .testimonial-header img {
-          width: 56px;
-          height: 56px;
-        }
-
-        .stars {
-          text-align: center;
-        }
-
-        .swiper-button-prev {
-          right: 65px;
-        }
-
-        .swiper-button-next {
-          right: 15px;
+          width: 100%;
         }
       }
     </style>
@@ -434,103 +397,11 @@
         </div>
 
         <div class="col-lg-6">
-          <div class="hero-media">
-            <img
-              src="https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Medical team"
-            />
-            <div class="testimonial-card">
-              <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="testimonial-header">
-                      <img
-                        src="https://images.pexels.com/photos/5327955/pexels-photo-5327955.jpeg?auto=compress&cs=tinysrgb&w=200"
-                        alt="Richard Grene"
-                      />
-                      <div>
-                        <div class="testimonial-name">Richard Grene</div>
-                        <div class="testimonial-role">Entrepreneur</div>
-                      </div>
-                    </div>
-                    <div class="stars">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="mb-3">
-                      “To help all and give hope to those who have lost hope. Our
-                      administrative and clinical team is second to none, reiterating
-                      while we have the best of an expert team taking care of patients.”
-                    </p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <span class="quote-icon"><i class="fa-solid fa-quote-right"></i></span>
-                    </div>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <div class="testimonial-header">
-                      <img
-                        src="https://images.pexels.com/photos/3760859/pexels-photo-3760859.jpeg?auto=compress&cs=tinysrgb&w=200"
-                        alt="Emily Stone"
-                      />
-                      <div>
-                        <div class="testimonial-name">Emily Stone</div>
-                        <div class="testimonial-role">Product Designer</div>
-                      </div>
-                    </div>
-                    <div class="stars">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <p class="mb-3">
-                      “The staff is caring and the doctors are thorough. They kept me
-                      updated during each stage and made sure my treatment stayed on
-                      track.”
-                    </p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <span class="quote-icon"><i class="fa-solid fa-quote-right"></i></span>
-                    </div>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <div class="testimonial-header">
-                      <img
-                        src="https://images.pexels.com/photos/532220/pexels-photo-532220.jpeg?auto=compress&cs=tinysrgb&w=200"
-                        alt="Jason Malik"
-                      />
-                      <div>
-                        <div class="testimonial-name">Jason Malik</div>
-                        <div class="testimonial-role">Marketing Lead</div>
-                      </div>
-                    </div>
-                    <div class="stars">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="mb-3">
-                      “Scheduling was a breeze and the outpatient wing is incredibly
-                      efficient. I never felt rushed and left confident in my care.”
-                    </p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <span class="quote-icon"><i class="fa-solid fa-quote-right"></i></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-              </div>
-            </div>
-          </div>
+          <img
+            class="img-fluid rounded-4 w-100 shadow-lg"
+            src="https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Medical team"
+          />
         </div>
       </div>
     </section>

@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #fbf8ff;
+  color: #0d1b2a;
+}
+
+.medico-programs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 0;
+}
+
+.medico-programs .container {
+  max-width: 1040px;
+}
+
+.medico-programs .row {
+  row-gap: 1.25rem;
+}
+
+.media-wrapper {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 28px 60px rgba(13, 27, 42, 0.16);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.media-wrapper img {
+  width: 100%;
+  height: auto;
+  min-height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+.media-stats {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 14px 30px rgba(13, 27, 42, 0.14);
+  font-size: 0.8rem;
+}
+
+.media-stats .label {
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #1b4ed5;
+}
+
+.media-stats h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0c2b64;
+}
+
+.media-stats h3 span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #5f6b7e;
+}
+
+.section-heading {
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.55rem, 2.2vw, 2rem);
+  font-weight: 600;
+  color: #081126;
+  margin-bottom: 6px;
+}
+
+.section-heading .lead {
+  max-width: 500px;
+  color: #4b5c6c;
+  line-height: 1.4;
+  font-size: 0.82rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: #1c62f2;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.program-grid {
+  margin-bottom: 10px;
+}
+
+.program-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 12px 12px;
+  border: 1px solid rgba(12, 43, 100, 0.08);
+  box-shadow: 0 10px 20px rgba(13, 27, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(13, 27, 42, 0.12);
+}
+
+.program-card__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.75rem;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0d1b2a;
+  margin-bottom: 4px;
+}
+
+.program-card p {
+  color: #5c6677;
+  font-size: 0.68rem;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, #4e8aff, #809bff);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #63d471, #39b385);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #a163ff, #705dff);
+}
+
+.gradient-orange {
+  background: linear-gradient(135deg, #ffb36c, #ff7b6b);
+}
+
+.gradient-berry {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+}
+
+.cta-row .btn {
+  border-radius: 40px;
+  padding: 12px 32px;
+  font-weight: 600;
+}
+
+.seo-note {
+  font-size: 0.9rem;
+  color: #4b5c6c;
+  max-width: 480px;
+}
+
+@media (max-width: 991px) {
+  .medico-programs {
+    padding: 40px 0;
+  }
+
+  .media-wrapper img {
+    height: 420px;
+  }
+
+  .media-stats {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .media-wrapper img {
+    height: 320px;
+  }
+
+  .media-stats {
+    inset: auto 16px 16px;
+    padding: 16px;
+  }
+
+  .program-card {
+    padding: 20px;
+  }
+
+  .cta-row .btn {
+    width: 100%;
+  }
+}
+
