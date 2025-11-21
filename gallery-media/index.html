@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery & Media Coverage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="media-gallery py-5">
+    <div class="container">
+      <div class="section-header text-center mb-4">
+        <p class="eyebrow">Gallery &amp; Media Coverage</p>
+        <h2>Moments from Our Journey</h2>
+        <p class="lead">
+          A glimpse into events, client milestones, and wellness stories featured across major media outlets.
+        </p>
+      </div>
+
+      <ul class="nav nav-pills justify-content-center gap-2 mb-4" id="mediaTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="events-tab" data-bs-toggle="pill" data-bs-target="#events" type="button" role="tab">Events</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="photos-tab" data-bs-toggle="pill" data-bs-target="#photos" type="button" role="tab">Photos</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="media-tab" data-bs-toggle="pill" data-bs-target="#media" type="button" role="tab">Media Mentions</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="videos-tab" data-bs-toggle="pill" data-bs-target="#videos" type="button" role="tab">Videos</button>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="events" role="tabpanel">
+          <div class="grid">
+            <div class="grid-item tall">
+              <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Wellness conference">
+              <div class="overlay">
+                <span>Global Wellness Conclave</span>
+                <p>Medical leaders discussing future-ready gym programs.</p>
+              </div>
+            </div>
+            <div class="grid-item wide">
+              <img src="https://images.pexels.com/photos/3259624/pexels-photo-3259624.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Fitness retreat">
+              <div class="overlay">
+                <span>Member Retreat</span>
+                <p>Holistic detox weekend powered by our doctors.</p>
+              </div>
+            </div>
+            <div class="grid-item square">
+              <img src="https://images.pexels.com/photos/3184396/pexels-photo-3184396.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Panel talk">
+              <div class="overlay">
+                <span>Panel Talk</span>
+                <p>Doctor-led Q&amp;A on safe weight-loss programs.</p>
+              </div>
+            </div>
+            <div class="grid-item square">
+              <img src="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Awards night">
+              <div class="overlay">
+                <span>Media Awards Night</span>
+                <p>Recognized for best doctor-guided fitness studio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="photos" role="tabpanel">
+          <div class="grid">
+            <div class="grid-item square"><img src="https://images.pexels.com/photos/3755440/pexels-photo-3755440.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+            <div class="grid-item tall"><img src="https://images.pexels.com/photos/3755759/pexels-photo-3755759.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+            <div class="grid-item wide"><img src="https://images.pexels.com/photos/8436581/pexels-photo-8436581.jpeg?auto=compress&cs=tinysrgb&w=900" alt=""></div>
+            <div class="grid-item square"><img src="https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="media" role="tabpanel">
+          <div class="grid">
+            <article class="media-card">
+              <span class="badge bg-primary-subtle text-primary">Press</span>
+              <h4>“Hospital-Based Gym Reimagines Wellness”</h4>
+              <p>Featured in HealthToday magazine covering our doctor-led programs.</p>
+              <a href="#">Read Article →</a>
+            </article>
+            <article class="media-card">
+              <span class="badge bg-primary-subtle text-primary">Podcast</span>
+              <h4>“Safe Weight Loss with Medico Fitness”</h4>
+              <p>Top wellness podcast interviews our chief medical officer.</p>
+              <a href="#">Listen Now →</a>
+            </article>
+            <article class="media-card">
+              <span class="badge bg-primary-subtle text-primary">News</span>
+              <h4>“Gym Member Reviews Surge at Medico”</h4>
+              <p>Local news featuring client success stories and transformation stats.</p>
+              <a href="#">View Coverage →</a>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="videos" role="tabpanel">
+          <div class="grid">
+            <div class="grid-item video">
+              <img src="https://images.pexels.com/photos/3182762/pexels-photo-3182762.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+              <button class="play-btn"><i class="bi bi-play-fill"></i></button>
+              <div class="overlay">
+                <span>Transforming Lives</span>
+                <p>Client journeys from diagnosis to empowered fitness.</p>
+              </div>
+            </div>
+            <div class="grid-item video">
+              <img src="https://images.pexels.com/photos/7551678/pexels-photo-7551678.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+              <button class="play-btn"><i class="bi bi-play-fill"></i></button>
+              <div class="overlay">
+                <span>Media Spotlight</span>
+                <p>Broadcast coverage of our annual wellness summit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center pt-4">
+        <a href="#" class="btn btn-primary btn-lg">View All Media →</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+
