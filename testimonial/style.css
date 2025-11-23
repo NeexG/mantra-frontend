@@ -4,15 +4,15 @@
   padding: 0;
 }
 
-.testimonials {
+.mantra-testimonials-section {
   padding: 56px 0;
   background: radial-gradient(120% 120% at 50% 10%, #f6fbff 0%, #eef4ff 60%, #ffffff 100%);
 }
-.testimonials .container {
+.mantra-testimonials-section .container {
   max-width: 1100px;
 }
 
-.eyebrow {
+.mantra-testimonial-eyebrow {
   font-size: 0.8rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -22,29 +22,29 @@
   gap: 8px;
   margin-bottom: 8px;
 }
-.eyebrow::before,
-.eyebrow::after {
+.mantra-testimonial-eyebrow::before,
+.mantra-testimonial-eyebrow::after {
   content: "";
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: currentColor;
 }
-.testimonials h2 {
+.mantra-testimonials-section h2 {
   font-size: clamp(2rem, 3vw, 2.6rem);
   font-weight: 700;
   margin-bottom: 12px;
 }
-.testimonials .lead {
+.mantra-testimonials-section .lead {
   color: #4e5d73;
   max-width: 620px;
   margin: 0 auto;
   line-height: 1.6;
 }
-.cta-wrapper {
+.mantra-testimonial-cta-wrapper {
   margin-top: 20px;
 }
-.cta-wrapper .btn {
+.mantra-testimonial-cta-wrapper .btn {
   background: linear-gradient(135deg, #4285f4, #36d1dc);
   border: none;
   padding: 12px 30px;
@@ -52,21 +52,28 @@
   font-weight: 600;
 }
 
-.testimonial-slider {
+.mantra-testimonial-slider {
   padding: 20px 6px 30px;
 }
 
-.testimonial-slider .swiper-slide {
+.mantra-testimonial-slider .swiper-slide {
   height: auto;
   display: flex;
 }
 
-.testimonial-slider .swiper-wrapper {
+.mantra-testimonial-slider .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+  min-height: 240px;
+}
+
+/* Ensure cards are centered and have equal height */
+.mantra-testimonial-slider .swiper-wrapper .swiper-slide {
   display: flex;
   align-items: stretch;
 }
 
-.testimonial-card {
+.mantra-testimonial-card {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
   border-radius: 18px;
   padding: 20px;
@@ -78,46 +85,55 @@
   min-height: 240px;
 }
 
-.rating {
+.mantra-testimonial-rating {
   color: #f4b400;
   font-size: 0.9rem;
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
 
-.testimonial-card h4 {
+.mantra-testimonial-card h4 {
   font-size: 1rem;
   margin-bottom: 8px;
   color: #0c1b35;
 }
 
-.testimonial-card p {
+.mantra-testimonial-card p {
   color: #566079;
   font-size: 0.9rem;
   line-height: 1.5;
   flex-grow: 1;
 }
 
-.person {
+.mantra-testimonial-person {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 16px;
+  margin-top: auto;
 }
 
-.person img {
+.mantra-testimonial-person img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.person span {
-  font-size: 0.85rem;
-  color: #8b95a6;
+.mantra-testimonial-person strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #0c1b35;
+  font-weight: 600;
+  margin-bottom: 2px;
 }
 
-.nav-btn {
+.mantra-testimonial-person span {
+  font-size: 0.85rem;
+  color: #8b95a6;
+  display: block;
+}
+
+.mantra-testimonial-nav-btn {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -131,7 +147,7 @@
   color: #1f3c88;
   transition: all 0.2s ease;
 }
-.nav-btn:hover {
+.mantra-testimonial-nav-btn:hover {
   background: #1f3c88;
   color: #fff;
 }
@@ -151,26 +167,71 @@
 }
 
 @media (max-width: 991px) {
-  .testimonial-card {
+  .mantra-testimonial-slider .swiper-wrapper {
+    min-height: 250px;
+  }
+  .mantra-testimonial-card {
     min-height: 240px;
   }
 }
 
 @media (max-width: 768px) {
-  .testimonial-card {
+  .mantra-testimonial-slider .swiper-wrapper {
+    min-height: 280px;
+  }
+  .mantra-testimonial-card {
     margin: 0 auto;
     min-height: 250px;
   }
 }
 
 @media (max-width: 576px) {
-  .testimonial-card {
-    min-height: 240px;
+  .mantra-testimonials-section {
+    padding: 40px 0;
   }
-  .cta-wrapper .btn {
+  .mantra-testimonial-slider .swiper-wrapper {
+    min-height: 300px;
+  }
+  .mantra-testimonial-card {
+    min-height: 240px;
+    padding: 18px;
+  }
+  .mantra-testimonial-card h4 {
+    font-size: 0.95rem;
+  }
+  .mantra-testimonial-card p {
+    font-size: 0.85rem;
+  }
+  .mantra-testimonial-person img {
+    width: 40px;
+    height: 40px;
+  }
+  .mantra-testimonial-person strong {
+    font-size: 0.85rem;
+  }
+  .mantra-testimonial-person span {
+    font-size: 0.8rem;
+  }
+  .mantra-testimonial-cta-wrapper .btn {
     width: 100%;
     padding: 10px 24px;
     font-size: 0.92rem;
+  }
+  .mantra-testimonial-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop optimization */
+@media (min-width: 1200px) {
+  .mantra-testimonial-slider .swiper-wrapper {
+    min-height: 260px;
+  }
+  .mantra-testimonial-card {
+    min-height: 260px;
+    padding: 24px;
   }
 }
 
