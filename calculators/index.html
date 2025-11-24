@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Use our free BMI, BMR & fitness calculators to track your health progress instantly.">
+  <title>Free Fitness Calculators | BMI, BMR & Body Fat | Mantra Health Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="calc-hero">
+    <div class="calc-hero-overlay"></div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="calc-hero-content">
+            <span class="calc-eyebrow">Track Your Progress</span>
+            <h1>Free Fitness Calculators</h1>
+            <p>Calculate BMI, BMR, body fat, and daily water intake instantly. Share results with your Mantra coach to personalize your plan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="calc-grid">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <!-- BMI -->
+        <div class="col-12 col-xl-10">
+          <article class="calc-card" id="bmiCalculator">
+            <h2><i class="fas fa-ruler-vertical"></i> BMI Calculator</h2>
+            <p>Body Mass Index helps you understand your weight relative to your height.</p>
+            <div class="calc-inputs">
+              <label>Height (cm)
+                <input type="number" id="bmiHeight" placeholder="170" min="50" max="250">
+              </label>
+              <label>Weight (kg)
+                <input type="number" id="bmiWeight" placeholder="65" min="20" max="250">
+              </label>
+            </div>
+            <div class="calc-result">
+              <span>BMI:</span>
+              <strong id="bmiValue">--</strong>
+              <small id="bmiStatus"></small>
+            </div>
+          </article>
+        </div>
+        <!-- BMR -->
+        <div class="col-12 col-xl-10">
+          <article class="calc-card" id="bmrCalculator">
+            <h2><i class="fas fa-fire"></i> BMR Calculator</h2>
+            <p>Basal Metabolic Rate estimates calories burned at rest.</p>
+            <div class="calc-inputs">
+              <label>Gender
+                <select id="bmrGender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </label>
+              <label>Age (years)
+                <input type="number" id="bmrAge" placeholder="30" min="10" max="90">
+              </label>
+              <label>Height (cm)
+                <input type="number" id="bmrHeight" placeholder="170" min="50" max="250">
+              </label>
+              <label>Weight (kg)
+                <input type="number" id="bmrWeight" placeholder="65" min="20" max="250">
+              </label>
+            </div>
+            <div class="calc-result">
+              <span>BMR:</span>
+              <strong id="bmrValue">-- kcal/day</strong>
+            </div>
+          </article>
+        </div>
+        <!-- Water Intake -->
+        <div class="col-12 col-xl-10">
+          <article class="calc-card" id="waterCalculator">
+            <h2><i class="fas fa-tint"></i> Water Intake Calculator</h2>
+            <p>Estimate your daily hydration needs based on weight and activity.</p>
+            <div class="calc-inputs">
+              <label>Weight (kg)
+                <input type="number" id="waterWeight" placeholder="65" min="20" max="200">
+              </label>
+              <label>Activity (minutes)
+                <input type="number" id="waterActivity" placeholder="30" min="0" max="180">
+              </label>
+            </div>
+            <div class="calc-result">
+              <span>Recommended Intake:</span>
+              <strong id="waterValue">-- L/day</strong>
+            </div>
+          </article>
+        </div>
+        <!-- Body Fat -->
+        <div class="col-12 col-xl-10">
+          <article class="calc-card" id="bodyFatCalculator">
+            <h2><i class="fas fa-percentage"></i> Body Fat Calculator</h2>
+            <p>US Navy method using circumference measurements.</p>
+            <div class="calc-inputs">
+              <label>Gender
+                <select id="bfGender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </label>
+              <label>Height (cm)
+                <input type="number" id="bfHeight" placeholder="175" min="100" max="230">
+              </label>
+              <label>Neck (cm)
+                <input type="number" id="bfNeck" placeholder="38" min="20" max="60">
+              </label>
+              <label>Waist (cm)
+                <input type="number" id="bfWaist" placeholder="85" min="40" max="200">
+              </label>
+              <label id="bfHipLabel">Hip (cm)
+                <input type="number" id="bfHip" placeholder="95" min="50" max="200">
+              </label>
+            </div>
+            <div class="calc-result">
+              <span>Body Fat:</span>
+              <strong id="bfValue">-- %</strong>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script>
+    const bmiInputs = ["bmiHeight", "bmiWeight"];
+    bmiInputs.forEach(id => document.getElementById(id).addEventListener('input', updateBMI));
+
+    function updateBMI() {
+      const h = parseFloat(document.getElementById('bmiHeight').value);
+      const w = parseFloat(document.getElementById('bmiWeight').value);
+      if (!h || !w) return;
+      const bmi = w / Math.pow(h / 100, 2);
+      document.getElementById('bmiValue').textContent = bmi.toFixed(1);
+      let status;
+      if (bmi < 18.5) status = 'Underweight';
+      else if (bmi < 25) status = 'Healthy';
+      else if (bmi < 30) status = 'Overweight';
+      else status = 'Obese';
+      document.getElementById('bmiStatus').textContent = status;
+    }
+
+    const bmrInputs = ["bmrGender", "bmrAge", "bmrHeight", "bmrWeight"];
+    bmrInputs.forEach(id => document.getElementById(id).addEventListener('input', updateBMR));
+
+    function updateBMR() {
+      const gender = document.getElementById('bmrGender').value;
+      const age = parseFloat(document.getElementById('bmrAge').value);
+      const height = parseFloat(document.getElementById('bmrHeight').value);
+      const weight = parseFloat(document.getElementById('bmrWeight').value);
+      if (!age || !height || !weight) return;
+      let bmr = 10 * weight + 6.25 * height - 5 * age + (gender === 'male' ? 5 : -161);
+      document.getElementById('bmrValue').textContent = `${bmr.toFixed(0)} kcal/day`;
+    }
+
+    ["waterWeight", "waterActivity"].forEach(id => document.getElementById(id).addEventListener('input', updateWater));
+
+    function updateWater() {
+      const weight = parseFloat(document.getElementById('waterWeight').value);
+      const activity = parseFloat(document.getElementById('waterActivity').value) || 0;
+      if (!weight) return;
+      const base = weight * 0.033;
+      const extra = (activity / 30) * 0.35;
+      const total = base + extra;
+      document.getElementById('waterValue').textContent = `${total.toFixed(2)} L/day`;
+    }
+
+    ["bfGender", "bfHeight", "bfNeck", "bfWaist", "bfHip"].forEach(id => document.getElementById(id).addEventListener('input', updateBodyFat));
+
+    document.getElementById('bfGender').addEventListener('change', (e) => {
+      const hipLabel = document.getElementById('bfHipLabel');
+      hipLabel.style.display = e.target.value === 'female' ? 'block' : 'none';
+      updateBodyFat();
+    });
+
+    function updateBodyFat() {
+      const gender = document.getElementById('bfGender').value;
+      const height = parseFloat(document.getElementById('bfHeight').value);
+      const neck = parseFloat(document.getElementById('bfNeck').value);
+      const waist = parseFloat(document.getElementById('bfWaist').value);
+      const hip = parseFloat(document.getElementById('bfHip').value);
+      if (!height || !neck || !waist || (gender === 'female' && !hip)) return;
+      let bf;
+      if (gender === 'male') {
+        bf = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
+      } else {
+        bf = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
+      }
+      document.getElementById('bfValue').textContent = `${bf.toFixed(1)} %`;
+    }
+
+    // Initialize hip visibility for male
+    document.getElementById('bfHipLabel').style.display = 'none';
+  </script>
+</body>
+
+</html>
