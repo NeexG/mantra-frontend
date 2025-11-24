@@ -1,0 +1,345 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #4b5873;
+  line-height: 1.6;
+}
+
+.medico-hero .container,
+.medico-intro .container,
+.medico-packages .container,
+.medico-comparison .container,
+.medico-testimonials .container,
+.medico-cta .container {
+  max-width: 1600px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.medico-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #f9a243;
+  margin-bottom: 12px;
+}
+
+.medico-eyebrow::before,
+.medico-eyebrow::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.medico-hero {
+  position: relative;
+  padding: 120px 0;
+  background-image: url('https://images.pexels.com/photos/3714743/pexels-photo-3714743.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.medico-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(14,31,86,0.85), rgba(14,31,86,0.75));
+}
+
+.medico-hero .container { position: relative; z-index: 2; }
+
+.medico-hero-content {
+  color: #fff;
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+.medico-hero-content h1 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.medico-hero-intro {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.8;
+}
+
+.medico-intro {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.medico-intro-content {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.medico-intro-content h2 {
+  font-size: clamp(2rem,3vw,2.6rem);
+  color: #0e1f56;
+  margin-bottom: 20px;
+}
+
+.medico-intro-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.medico-intro-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.medico-intro-list i { color: #29aadf; }
+
+.medico-intro-card {
+  background: #f8f9fa;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.medico-doctor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.medico-doctor img {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.doctor-quote {
+  font-style: italic;
+  color: #0e1f56;
+  line-length: 1.8;
+  margin-bottom: 16px;
+}
+
+.doctor-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: #4b5873;
+}
+
+.medico-packages {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.medico-packages .text-center { animation: fadeInUp 0.8s ease-out forwards; }
+
+.medico-package-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(249,162,67,0.15);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.package-badge {
+  position: absolute;
+  top: 24px;
+  right: -40px;
+  background: #29aadf;
+  color: #fff;
+  padding: 6px 60px;
+  transform: rotate(45deg);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.medico-package-card h3 {
+  font-size: 1.4rem;
+  color: #0e1f56;
+  margin-bottom: 12px;
+}
+
+.package-description { margin-bottom: 18px; }
+
+.package-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.package-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.package-features i { color: #29aadf; }
+
+.package-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  background: #f9a243;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.package-link:hover {
+  background: #29aadf;
+}
+
+.medico-comparison {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.medico-table {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.medico-table th {
+  background: #0e1f56;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+}
+
+.medico-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.medico-table td:first-child { text-align: left; font-weight: 600; }
+
+.medico-table i { color: #29aadf; }
+
+.medico-testimonials {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.medico-testimonial-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  height: 100%;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.testimonial-rating { color: #f9a243; margin-bottom: 16px; }
+
+.testimonial-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.testimonial-person img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.medico-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f9a243, #29aadf);
+  color: #fff;
+}
+
+.medico-cta-content h2 {
+  font-size: clamp(2rem,3vw,2.6rem);
+  margin-bottom: 16px;
+}
+
+.medico-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  border-radius: 50px;
+  background: #fff;
+  color: #f9a243;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.medico-cta-button:hover { transform: translateY(-4px); }
+
+@media (max-width: 992px) {
+  .medico-hero { padding: 80px 0; }
+  .medico-packages, .medico-comparison, .medico-testimonials, .medico-cta, .medico-intro { padding: 60px 0; }
+}
+
+@media (max-width: 768px) {
+  .medico-hero { padding: 60px 0; }
+  .medico-packages, .medico-comparison, .medico-testimonials, .medico-cta, .medico-intro { padding: 40px 0; }
+  .package-badge { display: none; }
+}
