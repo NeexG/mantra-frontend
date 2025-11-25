@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore our media gallery featuring events, workshops, and activities from Mantra Health Club.">
+  <meta name="keywords" content="Mantra Health Club events, fitness gallery, health club activities, wellness events, gym photos, fitness videos">
+  <title>Media & Gallery | Events & Activities | Mantra Health Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <section class="media-hero">
+    <div class="media-hero-overlay"></div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="media-hero-content">
+            <span class="media-eyebrow">Media & Gallery</span>
+            <h1>Events, Photos & Videos</h1>
+            <p class="media-hero-intro">
+              Explore our vibrant community through events, workshops, and activities. Visual proof of the transformative
+              journey at Mantra Health Club.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Gallery Section -->
+  <section class="media-gallery-section">
+    <div class="container">
+      <!-- Tabs Navigation -->
+      <ul class="nav nav-pills justify-content-center gap-2 mb-5" id="mediaTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="events-tab" data-bs-toggle="pill" data-bs-target="#events" type="button"
+            role="tab" aria-controls="events" aria-selected="true">
+            <i class="fas fa-calendar-alt"></i> Events
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="photos-tab" data-bs-toggle="pill" data-bs-target="#photos" type="button"
+            role="tab" aria-controls="photos" aria-selected="false">
+            <i class="fas fa-images"></i> Photos
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="videos-tab" data-bs-toggle="pill" data-bs-target="#videos" type="button"
+            role="tab" aria-controls="videos" aria-selected="false">
+            <i class="fas fa-video"></i> Videos
+          </button>
+        </li>
+      </ul>
+
+      <!-- Tab Content -->
+      <div class="tab-content" id="mediaTabContent">
+        <!-- Events Tab -->
+        <div class="tab-pane fade show active" id="events" role="tabpanel" aria-labelledby="events-tab">
+          <div class="media-grid">
+            <div class="media-item" data-glightbox="title: Wellness Workshop 2024; description: Annual wellness workshop featuring expert trainers and nutritionists">
+              <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Wellness Workshop Event">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Workshop</span>
+                  <h3>Wellness Workshop 2024</h3>
+                  <p>Annual wellness workshop featuring expert trainers and nutritionists</p>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Fitness Challenge Event; description: Members participating in our monthly fitness challenge">
+              <img src="https://images.pexels.com/photos/3259624/pexels-photo-3259624.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Fitness Challenge Event">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Challenge</span>
+                  <h3>Fitness Challenge Event</h3>
+                  <p>Members participating in our monthly fitness challenge</p>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Yoga Retreat; description: Holistic yoga retreat weekend at Mantra Health Club">
+              <img src="https://images.pexels.com/photos/3184396/pexels-photo-3184396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Yoga Retreat Event">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Retreat</span>
+                  <h3>Yoga Retreat</h3>
+                  <p>Holistic yoga retreat weekend at Mantra Health Club</p>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Awards Night; description: Celebrating excellence at our annual awards night">
+              <img src="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Awards Night Event">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Awards</span>
+                  <h3>Awards Night</h3>
+                  <p>Celebrating excellence at our annual awards night</p>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Nutrition Seminar; description: Expert nutritionists sharing insights on healthy eating">
+              <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Nutrition Seminar Event">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Seminar</span>
+                  <h3>Nutrition Seminar</h3>
+                  <p>Expert nutritionists sharing insights on healthy eating</p>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Member Success Stories; description: Celebrating member transformations and achievements">
+              <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Member Success Stories Event">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Success</span>
+                  <h3>Member Success Stories</h3>
+                  <p>Celebrating member transformations and achievements</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photos Tab -->
+        <div class="tab-pane fade" id="photos" role="tabpanel" aria-labelledby="photos-tab">
+          <div class="media-grid">
+            <div class="media-item" data-glightbox="title: Gym Facilities; description: State-of-the-art gym equipment and facilities">
+              <img src="https://images.pexels.com/photos/3755440/pexels-photo-3755440.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Gym Facilities">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Facilities</span>
+                  <h3>Gym Facilities</h3>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Training Session; description: Personal training session in progress">
+              <img src="https://images.pexels.com/photos/3755759/pexels-photo-3755759.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Training Session">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Training</span>
+                  <h3>Training Session</h3>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Group Class; description: Energetic group fitness class">
+              <img src="https://images.pexels.com/photos/8436581/pexels-photo-8436581.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Group Fitness Class">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Group Class</span>
+                  <h3>Group Fitness Class</h3>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Yoga Studio; description: Peaceful yoga studio environment">
+              <img src="https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Yoga Studio">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Yoga</span>
+                  <h3>Yoga Studio</h3>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Cardio Zone; description: Modern cardio equipment area">
+              <img src="https://images.pexels.com/photos/4164750/pexels-photo-4164750.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Cardio Zone">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Cardio</span>
+                  <h3>Cardio Zone</h3>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Weight Training; description: Professional weight training area">
+              <img src="https://images.pexels.com/photos/4164840/pexels-photo-4164840.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Weight Training Area">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Strength</span>
+                  <h3>Weight Training Area</h3>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Locker Room; description: Clean and modern locker room facilities">
+              <img src="https://images.pexels.com/photos/4164751/pexels-photo-4164751.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Locker Room">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Facilities</span>
+                  <h3>Locker Room</h3>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Reception Area; description: Welcoming reception and lounge area">
+              <img src="https://images.pexels.com/photos/4164752/pexels-photo-4164752.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Reception Area">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Facilities</span>
+                  <h3>Reception Area</h3>
+                </div>
+              </div>
+            </div>
+            <div class="media-item" data-glightbox="title: Outdoor Training; description: Outdoor training sessions">
+              <img src="https://images.pexels.com/photos/4164753/pexels-photo-4164753.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Outdoor Training">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Training</span>
+                  <h3>Outdoor Training</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Videos Tab -->
+        <div class="tab-pane fade" id="videos" role="tabpanel" aria-labelledby="videos-tab">
+          <div class="media-grid">
+            <div class="media-item video-item" data-glightbox="type: video; source: youtube; href: https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+              <img src="https://images.pexels.com/photos/3182762/pexels-photo-3182762.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Transforming Lives Video">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Success Stories</span>
+                  <h3>Transforming Lives</h3>
+                  <p>Client journeys from diagnosis to empowered fitness</p>
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media-item video-item" data-glightbox="type: video; source: youtube; href: https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+              <img src="https://images.pexels.com/photos/7551678/pexels-photo-7551678.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Media Spotlight Video">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Media</span>
+                  <h3>Media Spotlight</h3>
+                  <p>Broadcast coverage of our annual wellness summit</p>
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media-item video-item" data-glightbox="type: video; source: youtube; href: https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+              <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Workout Routines Video">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Training</span>
+                  <h3>Workout Routines</h3>
+                  <p>Expert trainers demonstrating effective workout routines</p>
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media-item video-item" data-glightbox="type: video; source: youtube; href: https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+              <img src="https://images.pexels.com/photos/3259624/pexels-photo-3259624.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Nutrition Tips Video">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Nutrition</span>
+                  <h3>Nutrition Tips</h3>
+                  <p>Expert nutritionists sharing healthy eating tips</p>
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media-item video-item" data-glightbox="type: video; source: youtube; href: https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+              <img src="https://images.pexels.com/photos/3184396/pexels-photo-3184396.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Yoga Session Video">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Yoga</span>
+                  <h3>Yoga Session</h3>
+                  <p>Guided yoga and meditation sessions</p>
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media-item video-item" data-glightbox="type: video; source: youtube; href: https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+              <img src="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Member Testimonials Video">
+              <div class="media-overlay">
+                <div class="media-content">
+                  <span class="media-category">Testimonials</span>
+                  <h3>Member Testimonials</h3>
+                  <p>Real stories from our members about their transformation</p>
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="media-cta">
+    <div class="container">
+      <div class="media-cta-content text-center">
+        <h2>Join Our Community</h2>
+        <p>Be part of our events and activities. Experience the Mantra Health Club difference.</p>
+        <a href="#" class="media-cta-button">
+          <span>Book a Free Trial</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.media-item',
+      touchNavigation: true,
+      loop: false,
+      autoplayVideos: true
+    });
+  </script>
+</body>
+
+</html>
+
