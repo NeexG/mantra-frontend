@@ -48,7 +48,7 @@ body {
 .hero-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
-  color: #6b46c1;
+  color: #0e1f56;
   margin-bottom: 16px;
   line-height: 1.2;
 }
@@ -377,6 +377,242 @@ body {
   
   .cta-heading {
     font-size: 1.5rem;
+  }
+}
+
+/* About Mukti Section */
+.about-mukti {
+  padding: 100px 0;
+  background: #fafafa;
+}
+
+.about-mukti .container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* About Header */
+.about-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.about-main-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #0e1f56;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.about-main-subtitle {
+  font-size: 1.2rem;
+  color: #4b5873;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* About Content - Two Column Layout */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Left Column - Image Collage */
+.about-left {
+  position: sticky;
+  top: 100px;
+}
+
+.image-collage {
+  border: 2px solid #000;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.single-image-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.single-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Collage Footer */
+.collage-footer {
+  background: #1a1a1a;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.footer-decoration {
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #f9a243, #f9a243, #f9a243, transparent);
+  margin: 0 auto;
+  width: 85%;
+  position: relative;
+  border-top: 2px solid #f9a243;
+  border-bottom: 2px solid #f9a243;
+}
+
+.footer-decoration:first-child {
+  margin-bottom: 20px;
+}
+
+.footer-decoration:last-child {
+  margin-top: 20px;
+}
+
+.footer-text {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: italic;
+  margin: 0;
+  letter-spacing: 2px;
+  font-family: 'Georgia', serif;
+}
+
+/* Right Column - About Content */
+.about-right {
+  padding-left: 20px;
+}
+
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0e1f56;
+  margin-bottom: 24px;
+}
+
+.about-description {
+  font-size: 1.05rem;
+  color: #4b5873;
+  line-height: 1.9;
+  margin-bottom: 50px;
+}
+
+/* About Statistics */
+.about-stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-stat-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 120px;
+}
+
+.about-stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0e1f56;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.about-stat-label {
+  font-size: 1rem;
+  color: #4b5873;
+  font-weight: 500;
+}
+
+/* Responsive Design for About Section */
+@media (max-width: 1200px) {
+  .about-mukti .container {
+    padding: 0 40px;
+  }
+  
+  .about-content {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-mukti {
+    padding: 60px 0;
+  }
+  
+  .about-mukti .container {
+    padding: 0 30px;
+  }
+  
+  .about-header {
+    margin-bottom: 50px;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .about-left {
+    position: static;
+  }
+  
+  .about-right {
+    padding-left: 0;
+  }
+  
+  .about-stats {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-mukti {
+    padding: 40px 0;
+  }
+  
+  .about-mukti .container {
+    padding: 0 20px;
+  }
+  
+  .about-header {
+    margin-bottom: 40px;
+  }
+  
+  .about-main-title {
+    font-size: 2rem;
+  }
+  
+  .about-main-subtitle {
+    font-size: 1rem;
+  }
+  
+  .about-heading {
+    font-size: 2rem;
+  }
+  
+  .about-description {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+  
+  .about-stats {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .about-stat-item {
+    text-align: center;
+  }
+  
+  .footer-text {
+    font-size: 1.1rem;
   }
 }
 
