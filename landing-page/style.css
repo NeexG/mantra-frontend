@@ -616,3 +616,168 @@ body {
   }
 }
 
+/* Introduce Our Medico Yoga Section */
+.medico-yoga {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.medico-yoga .container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* Header Section */
+.medico-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.medico-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #0e1f56;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.medico-description {
+  font-size: 1.1rem;
+  color: #4b5873;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Feature Cards Grid */
+.medico-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.medico-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(14, 31, 86, 0.1);
+}
+
+.medico-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(14, 31, 86, 0.15);
+  border-color: #f9a243;
+}
+
+.medico-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f9a243, #29aadf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.medico-card:hover .medico-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 25px rgba(249, 162, 67, 0.3);
+}
+
+.medico-icon i {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.medico-card-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0e1f56;
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.medico-card:hover .medico-card-title {
+  color: #f9a243;
+}
+
+.medico-card-text {
+  font-size: 1rem;
+  color: #4b5873;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive Design for Medico Yoga Section */
+@media (max-width: 1200px) {
+  .medico-yoga .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .medico-yoga {
+    padding: 60px 0;
+  }
+  
+  .medico-yoga .container {
+    padding: 0 30px;
+  }
+  
+  .medico-header {
+    margin-bottom: 40px;
+  }
+  
+  .medico-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .medico-yoga {
+    padding: 40px 0;
+  }
+  
+  .medico-yoga .container {
+    padding: 0 20px;
+  }
+  
+  .medico-title {
+    font-size: 2rem;
+  }
+  
+  .medico-description {
+    font-size: 1rem;
+  }
+  
+  .medico-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .medico-card {
+    padding: 30px;
+  }
+  
+  .medico-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .medico-icon i {
+    font-size: 1.8rem;
+  }
+  
+  .medico-card-title {
+    font-size: 1.3rem;
+  }
+}
+
