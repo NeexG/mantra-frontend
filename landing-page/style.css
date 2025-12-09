@@ -1081,3 +1081,208 @@ body {
   }
 }
 
+/* Obesity Management Program */
+.obesity-program {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.obesity-program .container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.obesity-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.obesity-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #0e1f56;
+  margin-bottom: 20px;
+}
+
+.obesity-title span {
+  color: #0b4dbf;
+}
+
+.obesity-subtitle {
+  font-size: 1.05rem;
+  color: #4b5873;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.obesity-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.obesity-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(14, 31, 86, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.obesity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 65px rgba(14, 31, 86, 0.15);
+  border-color: #0b4dbf;
+}
+
+.obesity-card.popular {
+  border: 2px solid #198754;
+  box-shadow: 0 28px 75px rgba(25, 135, 84, 0.22);
+}
+
+.obesity-card .badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #198754;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 8px 20px rgba(25, 135, 84, 0.35);
+}
+
+.obesity-card-header h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0e1f56;
+  margin: 0 0 6px;
+}
+
+.obesity-card-header p {
+  color: #4b5873;
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.obesity-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.obesity-price .amount {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #0e1f56;
+}
+
+.obesity-price .duration {
+  font-size: 0.95rem;
+  color: #4b5873;
+}
+
+.obesity-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #4b5873;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.obesity-features li::before {
+  content: "•";
+  color: #198754;
+  font-weight: 800;
+  margin-right: 10px;
+}
+
+.obesity-button {
+  margin-top: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: #0e1f56;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(14, 31, 86, 0.2);
+}
+
+.obesity-button.primary {
+  background: #198754;
+  box-shadow: 0 10px 25px rgba(25, 135, 84, 0.3);
+}
+
+.obesity-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(14, 31, 86, 0.25);
+}
+
+.obesity-button.primary:hover {
+  box-shadow: 0 12px 28px rgba(25, 135, 84, 0.35);
+}
+
+.obesity-footer {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  color: #4b5873;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1200px) {
+  .obesity-program .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .obesity-program {
+    padding: 70px 0;
+  }
+  .obesity-program .container {
+    padding: 0 30px;
+  }
+  .obesity-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .obesity-program {
+    padding: 50px 0;
+  }
+  .obesity-program .container {
+    padding: 0 20px;
+  }
+  .obesity-title {
+    font-size: 2.1rem;
+  }
+  .obesity-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
